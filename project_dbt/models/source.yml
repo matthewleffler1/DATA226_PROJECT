@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: RAW
+    database: GROUP6_DB
+    schema: RAW
+    description: "Raw weather data sources"
+    tables:
+      - name: WEATHER_HISTORY_SJ_14DAYS
+        identifier: WEATHER_HISTORY_SJ_14DAYS
+        description: "Past 14 days of weather data for San Jose"
+      - name: CALIFORNIA_ZIP_CODE_WEATHER_DATA
+        identifier: CALIFORNIA_ZIP_CODE_WEATHER_DATA
+        description: "Weather data by ZIP code for various cities around California"
