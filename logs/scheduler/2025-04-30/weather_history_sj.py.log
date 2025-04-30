@@ -3659,3 +3659,38 @@
 [2025-04-30T21:39:48.127+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:39:48.126+0000] {dag.py:3229} INFO - Sync 1 DAGs
 [2025-04-30T21:39:48.159+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:39:48.159+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_history_sanjose to 2025-04-30 00:00:00+00:00, run_after=2025-05-01 00:00:00+00:00
 [2025-04-30T21:39:48.196+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_history_sj.py took 0.188 seconds
+[2025-04-30T21:40:18.663+0000] {processor.py:186} INFO - Started process (PID=7422) to work on /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:40:18.665+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_history_sj.py for tasks to queue
+[2025-04-30T21:40:18.672+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:40:18.671+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:40:18.706+0000] {processor.py:925} INFO - DAG(s) 'weather_history_sanjose' retrieved from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:40:18.754+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:40:18.753+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:40:18.783+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:40:18.783+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_history_sanjose to 2025-04-30 00:00:00+00:00, run_after=2025-05-01 00:00:00+00:00
+[2025-04-30T21:40:18.815+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_history_sj.py took 0.164 seconds
+[2025-04-30T21:40:49.174+0000] {processor.py:186} INFO - Started process (PID=7438) to work on /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:40:49.176+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_history_sj.py for tasks to queue
+[2025-04-30T21:40:49.183+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:40:49.183+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:40:49.230+0000] {processor.py:925} INFO - DAG(s) 'weather_history_sanjose' retrieved from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:40:49.277+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:40:49.276+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:40:49.321+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:40:49.321+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_history_sanjose to 2025-04-30 00:00:00+00:00, run_after=2025-05-01 00:00:00+00:00
+[2025-04-30T21:40:49.341+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_history_sj.py took 0.188 seconds
+[2025-04-30T21:41:19.674+0000] {processor.py:186} INFO - Started process (PID=7454) to work on /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:19.676+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_history_sj.py for tasks to queue
+[2025-04-30T21:41:19.681+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:19.680+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:19.729+0000] {processor.py:925} INFO - DAG(s) 'weather_history_sanjose' retrieved from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:19.782+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:19.781+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:41:19.812+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:19.811+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_history_sanjose to 2025-04-30 00:00:00+00:00, run_after=2025-05-01 00:00:00+00:00
+[2025-04-30T21:41:19.830+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_history_sj.py took 0.168 seconds
+[2025-04-30T21:41:37.968+0000] {processor.py:186} INFO - Started process (PID=7470) to work on /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:37.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_history_sj.py for tasks to queue
+[2025-04-30T21:41:37.978+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:37.977+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:38.008+0000] {processor.py:925} INFO - DAG(s) 'weather_history_sanjose' retrieved from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:38.192+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:38.191+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:41:38.216+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:38.216+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_history_sanjose to 2025-04-30 00:00:00+00:00, run_after=2025-05-01 00:00:00+00:00
+[2025-04-30T21:41:38.238+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_history_sj.py took 0.284 seconds
+[2025-04-30T21:41:42.045+0000] {processor.py:186} INFO - Started process (PID=7475) to work on /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:42.047+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_history_sj.py for tasks to queue
+[2025-04-30T21:41:42.050+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:42.050+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:42.066+0000] {processor.py:925} INFO - DAG(s) 'weather_history_sanjose' retrieved from /opt/airflow/dags/weather_history_sj.py
+[2025-04-30T21:41:42.078+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:42.078+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:41:42.096+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:41:42.096+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_history_sanjose to 2025-04-30 00:00:00+00:00, run_after=2025-05-01 00:00:00+00:00
+[2025-04-30T21:41:42.110+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_history_sj.py took 0.079 seconds
