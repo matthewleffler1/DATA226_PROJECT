@@ -10,23 +10,9 @@ import requests
 def extract_weather_batch():
     api_key = Variable.get("weather_api_key")
     zip_codes = [
-        "96101",  # Alturas
-        "95501",  # Eureka
-        "96001",  # Redding
-        "96160",  # Truckee
-        "95132",  # San Jose
-        "94103",  # San Francisco
-        "93901",  # Salinas
-        "93702",  # Fresno
-        "95370",  # Sonora
-        "93401",  # San Luis Obispo
-        "93301",  # Bakersfield
-        "92401",  # San Bernardino
-        "90001",  # Los Angeles
-        "92243",  # El Centro
-        "92101",  # San Diego
-        "93526",  # Independence
-        "92309",  # Baker
+        "96101", "95501", "96001", "96160", "95132", "94103", "93901",
+        "93702", "95370", "93401", "93301", "92401", "90001", "92243",
+        "92101", "93526", "92309"
     ]
     url_template = "http://api.weatherapi.com/v1/current.json?key={key}&q={city_zip_code}&aqi=no"
 
@@ -75,7 +61,7 @@ def transform_batch(data_list):
             'dewpoint_c': current.get('dewpoint_c'),
             'vis_km': current['vis_km'],
             'uv': current['uv'],
-            'gust_kph': current['gust_kph'],
+            'gust_kph': current['gust_kph']
         })
     return results
 
@@ -88,6 +74,7 @@ def load_current_weather(data_list, target_table):
     try:
         cur.execute("BEGIN;")
 
+        # Create table if it doesn't exist
         cur.execute(f"""
             CREATE TABLE IF NOT EXISTS {target_table} (
                 location_name STRING,
@@ -121,52 +108,26 @@ def load_current_weather(data_list, target_table):
             );
         """)
 
+        # Insert one row at a time with DELETE+INSERT (idempotent)
         for row in data_list:
+            # Delete existing record with same location_name and localtime
             cur.execute(f"""
                 DELETE FROM {target_table}
-                WHERE location_name = '{row['location_name']}'
-            """)
+                WHERE location_name = %(location_name)s AND "localtime" = TO_TIMESTAMP(%(localtime)s)
+            """, row)
 
+            # Insert new record
             cur.execute(f"""
-                INSERT INTO {target_table} (
-                    location_name, region, country, lat, lon,
-                    "localtime", temp_c, temp_f, feelslike_c, feelslike_f,
-                    is_day, condition, wind_kph, wind_mph,
-                    wind_dir, wind_degree, pressure_mb, pressure_in,
-                    precip_mm, precip_in, humidity, cloud,
-                    windchill_c, heatindex_c, dewpoint_c,
-                    vis_km, uv, gust_kph
-                ) VALUES (
-                    '{row['location_name']}',
-                    '{row['region']}',
-                    '{row['country']}',
-                    {row['lat']},
-                    {row['lon']},
-                    TO_TIMESTAMP('{row['localtime']}'),
-                    {row['temp_c']},
-                    {row['temp_f']},
-                    {row['feelslike_c']},
-                    {row['feelslike_f']},
-                    {row['is_day']},
-                    '{row['condition']}',
-                    {row['wind_kph']},
-                    {row['wind_mph']},
-                    '{row['wind_dir']}',
-                    {row['wind_degree']},
-                    {row['pressure_mb']},
-                    {row['pressure_in']},
-                    {row['precip_mm']},
-                    {row['precip_in']},
-                    {row['humidity']},
-                    {row['cloud']},
-                    {row['windchill_c']},
-                    {row['heatindex_c']},
-                    {row['dewpoint_c']},
-                    {row['vis_km']},
-                    {row['uv']},
-                    {row['gust_kph']}
+                INSERT INTO {target_table} VALUES (
+                    %(location_name)s, %(region)s, %(country)s, %(lat)s, %(lon)s,
+                    TO_TIMESTAMP(%(localtime)s), %(temp_c)s, %(temp_f)s,
+                    %(feelslike_c)s, %(feelslike_f)s, %(is_day)s, %(condition)s,
+                    %(wind_kph)s, %(wind_mph)s, %(wind_dir)s, %(wind_degree)s,
+                    %(pressure_mb)s, %(pressure_in)s, %(precip_mm)s, %(precip_in)s,
+                    %(humidity)s, %(cloud)s, %(windchill_c)s, %(heatindex_c)s,
+                    %(dewpoint_c)s, %(vis_km)s, %(uv)s, %(gust_kph)s
                 )
-            """)
+            """, row)
 
         cur.execute("COMMIT;")
     except Exception as e:
