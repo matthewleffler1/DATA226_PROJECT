@@ -5,9 +5,8 @@ from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
 from datetime import datetime, timedelta
 import requests
 
-
 @task
-def extract_sanjose_history(days_back=14):
+def extract_sanjose_history(days_back=14):  
     api_key = Variable.get("weather_api_key")
     base_url = "http://api.weatherapi.com/v1/history.json"
     city = "San Jose"
@@ -18,9 +17,14 @@ def extract_sanjose_history(days_back=14):
     for i in range(1, days_back + 1):
         date = today - timedelta(days=i)
         url = f"{base_url}?key={api_key}&q={city}&dt={date}"
-        response = requests.get(url)
-        response.raise_for_status()
-        raw_data.append(response.json())
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            raw_data.append(response.json())
+        except requests.exceptions.HTTPError as e:
+            print(f"[ERROR] Failed to fetch data for {date}: {e}")
+        except Exception as e:
+            print(f"[ERROR] Unexpected error for {date}: {e}")
 
     return raw_data
 
@@ -107,6 +111,14 @@ def load_weather_history(data, target_table):
         """)
 
         for row in data:
+            # Ensure idempotency: delete existing record first
+            cur.execute(f"""
+                DELETE FROM {target_table}
+                WHERE location_name = '{row['location_name']}'
+                AND "localtime" = TO_TIMESTAMP('{row['localtime']}')
+            """)
+
+            # Then insert fresh
             cur.execute(f"""
                 INSERT INTO {target_table} (
                     location_name, region, country, lat, lon,
