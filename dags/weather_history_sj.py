@@ -2,77 +2,77 @@ from airflow import DAG
 from airflow.models import Variable
 from airflow.decorators import task
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
-from datetime import datetime
+from datetime import datetime, timedelta
 import requests
 
 
 @task
-def extract_weather_batch():
+def extract_sanjose_history(days_back=14):
     api_key = Variable.get("weather_api_key")
-    cities = [
-        "Los Angeles", "San Diego", "San Jose", "San Francisco", "Fresno",
-        "Sacramento", "Long Beach", "Oakland", "Bakersfield", "Anaheim"
-    ]
-    url_template = "http://api.weatherapi.com/v1/current.json?key={key}&q={city}&aqi=no"
+    base_url = "http://api.weatherapi.com/v1/history.json"
+    city = "San Jose"
+    today = datetime.utcnow().date()
 
-    results = []
-    for city in cities:
-        url = url_template.format(key=api_key, city=city)
+    raw_data = []
+
+    for i in range(1, days_back + 1):
+        date = today - timedelta(days=i)
+        url = f"{base_url}?key={api_key}&q={city}&dt={date}"
         response = requests.get(url)
         response.raise_for_status()
-        results.append(response.json())
+        raw_data.append(response.json())
 
-    return results
-
-
-@task
-def transform_batch(data_list):
-    results = []
-    for data in data_list:
-        location = data['location']
-        current = data['current']
-
-        results.append({
-            'location_name': location['name'],
-            'region': location['region'],
-            'country': location['country'],
-            'lat': location['lat'],
-            'lon': location['lon'],
-            'localtime': location['localtime'],
-            'temp_c': current['temp_c'],
-            'temp_f': current['temp_f'],
-            'feelslike_c': current['feelslike_c'],
-            'feelslike_f': current['feelslike_f'],
-            'is_day': current['is_day'],
-            'condition': current['condition']['text'],
-            'wind_kph': current['wind_kph'],
-            'wind_mph': current['wind_mph'],
-            'wind_dir': current['wind_dir'],
-            'wind_degree': current['wind_degree'],
-            'pressure_mb': current['pressure_mb'],
-            'pressure_in': current['pressure_in'],
-            'precip_mm': current['precip_mm'],
-            'precip_in': current['precip_in'],
-            'humidity': current['humidity'],
-            'cloud': current['cloud'],
-            'windchill_c': current.get('windchill_c'),
-            'heatindex_c': current.get('heatindex_c'),
-            'dewpoint_c': current.get('dewpoint_c'),
-            'vis_km': current['vis_km'],
-            'uv': current['uv'],
-            'gust_kph': current['gust_kph'],
-        })
-    return results
+    return raw_data
 
 
 @task
-def load_current_weather(data_list, target_table):
+def transform_weather_history(raw_data):
+    weather_data = []
+
+    for day_data in raw_data:
+        location = day_data['location']
+        for hour in day_data['forecast']['forecastday'][0]['hour']:
+            weather_data.append({
+                'location_name': location['name'],
+                'region': location['region'],
+                'country': location['country'],
+                'lat': location['lat'],
+                'lon': location['lon'],
+                'localtime': hour['time'],
+                'temp_c': hour['temp_c'],
+                'temp_f': hour['temp_f'],
+                'feelslike_c': hour['feelslike_c'],
+                'feelslike_f': hour['feelslike_f'],
+                'is_day': hour['is_day'],
+                'condition': hour['condition']['text'],
+                'wind_kph': hour['wind_kph'],
+                'wind_mph': hour['wind_mph'],
+                'wind_dir': hour['wind_dir'],
+                'wind_degree': hour['wind_degree'],
+                'pressure_mb': hour['pressure_mb'],
+                'pressure_in': hour['pressure_in'],
+                'precip_mm': hour['precip_mm'],
+                'precip_in': hour['precip_in'],
+                'humidity': hour['humidity'],
+                'cloud': hour['cloud'],
+                'windchill_c': hour.get('windchill_c'),
+                'heatindex_c': hour.get('heatindex_c'),
+                'dewpoint_c': hour.get('dewpoint_c'),
+                'vis_km': hour['vis_km'],
+                'uv': hour['uv'],
+                'gust_kph': hour['gust_kph'],
+            })
+
+    return weather_data
+
+
+@task
+def load_weather_history(data, target_table):
     hook = SnowflakeHook(snowflake_conn_id='snowflake_conn')
     cur = hook.get_conn().cursor()
 
     try:
         cur.execute("BEGIN;")
-
         cur.execute(f"""
             CREATE TABLE IF NOT EXISTS {target_table} (
                 location_name STRING,
@@ -106,12 +106,7 @@ def load_current_weather(data_list, target_table):
             );
         """)
 
-        for row in data_list:
-            cur.execute(f"""
-                DELETE FROM {target_table}
-                WHERE location_name = '{row['location_name']}'
-            """)
-
+        for row in data:
             cur.execute(f"""
                 INSERT INTO {target_table} (
                     location_name, region, country, lat, lon,
@@ -163,14 +158,13 @@ def load_current_weather(data_list, target_table):
 
 
 with DAG(
-    dag_id='weather_ca_top10',
-    start_date=datetime(2025, 4, 25),
-    catchup=False,
-    schedule='@hourly',
-    tags=['weather', 'current', 'california']
+    dag_id='weather_history_sanjose',
+    start_date=datetime(2025, 4, 20),
+    catchup=True,
+    schedule_interval='@daily',
+    tags=['weather', 'history', 'sanjose']
 ) as dag:
-
-    target_table = 'GROUP6_DB.RAW.WEATHER_TOP10_CA'
-    raw = extract_weather_batch()
-    transformed = transform_batch(raw)
-    load_current_weather(transformed, target_table)
+    target_table = 'GROUP6_DB.RAW.WEATHER_HISTORY_SJ_14DAYS'
+    extracted = extract_sanjose_history()
+    transformed = transform_weather_history(extracted)
+    load_weather_history(transformed, target_table)
