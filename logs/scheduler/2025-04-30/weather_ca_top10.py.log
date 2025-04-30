@@ -3638,3 +3638,66 @@
 [2025-04-30T05:35:33.492+0000] {logging_mixin.py:190} INFO - [2025-04-30T05:35:33.492+0000] {dag.py:3229} INFO - Sync 1 DAGs
 [2025-04-30T05:35:33.504+0000] {logging_mixin.py:190} INFO - [2025-04-30T05:35:33.504+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 05:00:00+00:00, run_after=2025-04-30 06:00:00+00:00
 [2025-04-30T05:35:33.512+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.064 seconds
+[2025-04-30T21:35:48.092+0000] {processor.py:186} INFO - Started process (PID=7283) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:35:48.097+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:35:48.117+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:35:48.111+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:35:48.159+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:35:48.225+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:35:48.224+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:35:48.262+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:35:48.262+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:35:48.279+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.252 seconds
+[2025-04-30T21:36:18.729+0000] {processor.py:186} INFO - Started process (PID=7299) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:36:18.730+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:36:18.732+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:36:18.732+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:36:18.742+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:36:18.764+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:36:18.763+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:36:18.783+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:36:18.783+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:36:18.795+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.076 seconds
+[2025-04-30T21:36:49.294+0000] {processor.py:186} INFO - Started process (PID=7315) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:36:49.295+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:36:49.299+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:36:49.298+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:36:49.313+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:36:49.377+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:36:49.376+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:36:49.397+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:36:49.397+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:36:49.416+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.129 seconds
+[2025-04-30T21:37:19.723+0000] {processor.py:186} INFO - Started process (PID=7331) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:37:19.724+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:37:19.728+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:37:19.727+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:37:19.741+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:37:19.782+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:37:19.781+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:37:19.811+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:37:19.811+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:37:19.822+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.105 seconds
+[2025-04-30T21:37:50.176+0000] {processor.py:186} INFO - Started process (PID=7347) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:37:50.178+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:37:50.183+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:37:50.182+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:37:50.199+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:37:50.226+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:37:50.226+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:37:50.248+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:37:50.246+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:37:50.270+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.102 seconds
+[2025-04-30T21:38:20.696+0000] {processor.py:186} INFO - Started process (PID=7363) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:38:20.698+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:38:20.702+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:38:20.702+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:38:20.722+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:38:20.752+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:38:20.751+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:38:20.786+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:38:20.786+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:38:20.813+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.128 seconds
+[2025-04-30T21:38:51.091+0000] {processor.py:186} INFO - Started process (PID=7379) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:38:51.094+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:38:51.099+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:38:51.097+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:38:51.116+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:38:51.146+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:38:51.145+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:38:51.166+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:38:51.166+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:38:51.184+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.104 seconds
+[2025-04-30T21:39:21.541+0000] {processor.py:186} INFO - Started process (PID=7395) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:39:21.542+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:39:21.546+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:39:21.545+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:39:21.560+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:39:21.596+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:39:21.595+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:39:21.634+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:39:21.633+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:39:21.661+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.133 seconds
+[2025-04-30T21:39:52.103+0000] {processor.py:186} INFO - Started process (PID=7411) to work on /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:39:52.105+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_ca_top10.py for tasks to queue
+[2025-04-30T21:39:52.108+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:39:52.107+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:39:52.126+0000] {processor.py:925} INFO - DAG(s) 'weather_ca_top10' retrieved from /opt/airflow/dags/weather_ca_top10.py
+[2025-04-30T21:39:52.159+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:39:52.159+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-04-30T21:39:52.187+0000] {logging_mixin.py:190} INFO - [2025-04-30T21:39:52.187+0000] {dag.py:4156} INFO - Setting next_dagrun for weather_ca_top10 to 2025-04-30 20:00:00+00:00, run_after=2025-04-30 21:00:00+00:00
+[2025-04-30T21:39:52.210+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_ca_top10.py took 0.121 seconds
