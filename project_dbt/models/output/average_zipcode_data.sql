@@ -1,0 +1,19 @@
+SELECT LOCATION_NAME,
+       LAT,
+       LON,
+       CASE
+            WHEN LAT < 35.689062 THEN 'Southern California'
+            WHEN LAT < 38.843757 THEN 'Central California'
+            ELSE 'Northern California'
+       END AS REGION,
+       AVG(TEMP_F) AS AVERAGE_TEMPERATURE,
+       AVG(WIND_MPH) AS AVERAGE_WIND_SPEED_MPH,
+       SUM(PRECIP_IN) AS TOTAL_RAINFALL_INCHES,
+       AVG(HUMIDITY) AS AVERAGE_HUMIDITY,
+       AVG(CLOUDINESS) AS AVERAGE_CLOUDINESS,
+       AVG(UV) AS AVERAGE_UV,
+       AVG(GUST_KPH) AS AVERAGE_GUST_SPEED_KPH,
+       MIN("localtime") AS EARLIEST_RECORD_DATE,
+       MAX("localtime") AS LATEST_RECORD_DATE
+FROM {{ ref("raw_zipcode_weather_data") }}
+GROUP BY LOCATION_NAME, LAT, LON, REGION

@@ -1,0 +1,463 @@
+[2025-05-01T07:33:05.723+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:33:05.743+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:33:05.753+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:33:05.753+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:33:05.767+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_test> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:33:05.772+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_test', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '112', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmp5wixxt6n']
+[2025-05-01T07:33:05.774+0000] {standard_task_runner.py:105} INFO - Job 112: Subtask dbt_test
+[2025-05-01T07:33:05.779+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1764) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:33:05.780+0000] {standard_task_runner.py:72} INFO - Started process 1774 to run task
+[2025-05-01T07:33:05.796+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:33:05.827+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:33:05.827+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:33:05.835+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:33:05.835+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt test --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:33:05.839+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:33:06.715+0000] {subprocess.py:93} INFO - [0m07:33:06  Running with dbt=1.9.0-b4
+[2025-05-01T07:33:07.129+0000] {subprocess.py:93} INFO - [0m07:33:07  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:33:07.370+0000] {subprocess.py:93} INFO - [0m07:33:07  Found 6 models, 2 snapshots, 60 data tests, 2 sources, 725 macros
+[2025-05-01T07:33:07.372+0000] {subprocess.py:93} INFO - [0m07:33:07
+[2025-05-01T07:33:07.373+0000] {subprocess.py:93} INFO - [0m07:33:07  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:33:07.373+0000] {subprocess.py:93} INFO - [0m07:33:07
+[2025-05-01T07:33:09.712+0000] {subprocess.py:93} INFO - [0m07:33:09  1 of 60 START test accepted_values_average_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [RUN]
+[2025-05-01T07:33:10.441+0000] {subprocess.py:93} INFO - [0m07:33:10  1 of 60 PASS accepted_values_average_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [[32mPASS[0m in 0.73s]
+[2025-05-01T07:33:10.442+0000] {subprocess.py:93} INFO - [0m07:33:10  2 of 60 START test accepted_values_filtered_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [RUN]
+[2025-05-01T07:33:11.474+0000] {subprocess.py:93} INFO - [0m07:33:11  2 of 60 PASS accepted_values_filtered_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [[32mPASS[0m in 1.03s]
+[2025-05-01T07:33:11.478+0000] {subprocess.py:93} INFO - [0m07:33:11  3 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_HUMIDITY__0  [RUN]
+[2025-05-01T07:33:12.610+0000] {subprocess.py:93} INFO - [0m07:33:12  3 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_HUMIDITY__0  [[32mPASS[0m in 1.13s]
+[2025-05-01T07:33:12.613+0000] {subprocess.py:93} INFO - [0m07:33:12  4 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_PRECIP_IN__0  [RUN]
+[2025-05-01T07:33:13.610+0000] {subprocess.py:93} INFO - [0m07:33:13  4 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_PRECIP_IN__0  [[32mPASS[0m in 1.00s]
+[2025-05-01T07:33:13.611+0000] {subprocess.py:93} INFO - [0m07:33:13  5 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_UV__0  [RUN]
+[2025-05-01T07:33:14.321+0000] {subprocess.py:93} INFO - [0m07:33:14  5 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_UV__0  [[32mPASS[0m in 0.71s]
+[2025-05-01T07:33:14.323+0000] {subprocess.py:93} INFO - [0m07:33:14  6 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_WIND_MPH__0  [RUN]
+[2025-05-01T07:33:15.076+0000] {subprocess.py:93} INFO - [0m07:33:15  6 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_WIND_MPH__0  [[32mPASS[0m in 0.75s]
+[2025-05-01T07:33:15.078+0000] {subprocess.py:93} INFO - [0m07:33:15  7 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_CLOUDINESS__0  [RUN]
+[2025-05-01T07:33:15.773+0000] {subprocess.py:93} INFO - [0m07:33:15  7 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_CLOUDINESS__0  [[32mPASS[0m in 0.69s]
+[2025-05-01T07:33:15.779+0000] {subprocess.py:93} INFO - [0m07:33:15  8 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_GUST_SPEED_KPH__0  [RUN]
+[2025-05-01T07:33:16.755+0000] {subprocess.py:93} INFO - [0m07:33:16  8 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_GUST_SPEED_KPH__0  [[32mPASS[0m in 0.97s]
+[2025-05-01T07:33:16.757+0000] {subprocess.py:93} INFO - [0m07:33:16  9 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_HUMIDITY__0  [RUN]
+[2025-05-01T07:33:18.247+0000] {subprocess.py:93} INFO - [0m07:33:18  9 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_HUMIDITY__0  [[32mPASS[0m in 1.49s]
+[2025-05-01T07:33:18.250+0000] {subprocess.py:93} INFO - [0m07:33:18  10 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_UV__0  [RUN]
+[2025-05-01T07:33:18.942+0000] {subprocess.py:93} INFO - [0m07:33:18  10 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_UV__0  [[32mPASS[0m in 0.69s]
+[2025-05-01T07:33:18.944+0000] {subprocess.py:93} INFO - [0m07:33:18  11 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_WIND_SPEED_MPH__0  [RUN]
+[2025-05-01T07:33:19.593+0000] {subprocess.py:93} INFO - [0m07:33:19  11 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_WIND_SPEED_MPH__0  [[32mPASS[0m in 0.65s]
+[2025-05-01T07:33:19.597+0000] {subprocess.py:93} INFO - [0m07:33:19  12 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_TOTAL_RAINFALL_INCHES__0  [RUN]
+[2025-05-01T07:33:20.407+0000] {subprocess.py:93} INFO - [0m07:33:20  12 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_TOTAL_RAINFALL_INCHES__0  [[32mPASS[0m in 0.81s]
+[2025-05-01T07:33:20.410+0000] {subprocess.py:93} INFO - [0m07:33:20  13 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_CLOUDINESS__100__0  [RUN]
+[2025-05-01T07:33:21.141+0000] {subprocess.py:93} INFO - [0m07:33:21  13 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_CLOUDINESS__100__0  [[32mPASS[0m in 0.73s]
+[2025-05-01T07:33:21.143+0000] {subprocess.py:93} INFO - [0m07:33:21  14 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_HUMIDITY__0  [RUN]
+[2025-05-01T07:33:21.845+0000] {subprocess.py:93} INFO - [0m07:33:21  14 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_HUMIDITY__0  [[32mPASS[0m in 0.70s]
+[2025-05-01T07:33:21.848+0000] {subprocess.py:93} INFO - [0m07:33:21  15 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_PRECIP_IN__0  [RUN]
+[2025-05-01T07:33:22.603+0000] {subprocess.py:93} INFO - [0m07:33:22  15 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_PRECIP_IN__0  [[32mPASS[0m in 0.75s]
+[2025-05-01T07:33:22.606+0000] {subprocess.py:93} INFO - [0m07:33:22  16 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_UV__0  [RUN]
+[2025-05-01T07:33:23.533+0000] {subprocess.py:93} INFO - [0m07:33:23  16 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_UV__0  [[32mPASS[0m in 0.93s]
+[2025-05-01T07:33:23.535+0000] {subprocess.py:93} INFO - [0m07:33:23  17 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_WIND_MPH__0  [RUN]
+[2025-05-01T07:33:24.266+0000] {subprocess.py:93} INFO - [0m07:33:24  17 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_WIND_MPH__0  [[32mPASS[0m in 0.73s]
+[2025-05-01T07:33:24.267+0000] {subprocess.py:93} INFO - [0m07:33:24  18 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_CLOUDINESS__100__0  [RUN]
+[2025-05-01T07:33:24.935+0000] {subprocess.py:93} INFO - [0m07:33:24  18 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_CLOUDINESS__100__0  [[32mPASS[0m in 0.67s]
+[2025-05-01T07:33:24.939+0000] {subprocess.py:93} INFO - [0m07:33:24  19 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_GUST_KPH__0  [RUN]
+[2025-05-01T07:33:25.619+0000] {subprocess.py:93} INFO - [0m07:33:25  19 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_GUST_KPH__0  [[32mPASS[0m in 0.68s]
+[2025-05-01T07:33:25.622+0000] {subprocess.py:93} INFO - [0m07:33:25  20 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_HUMIDITY__0  [RUN]
+[2025-05-01T07:33:26.991+0000] {subprocess.py:93} INFO - [0m07:33:26  20 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_HUMIDITY__0  [[32mPASS[0m in 1.37s]
+[2025-05-01T07:33:26.994+0000] {subprocess.py:93} INFO - [0m07:33:26  21 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_PRECIP_IN__0  [RUN]
+[2025-05-01T07:33:28.424+0000] {subprocess.py:93} INFO - [0m07:33:28  21 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_PRECIP_IN__0  [[32mPASS[0m in 1.43s]
+[2025-05-01T07:33:28.428+0000] {subprocess.py:93} INFO - [0m07:33:28  22 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_UV__0  [RUN]
+[2025-05-01T07:33:29.127+0000] {subprocess.py:93} INFO - [0m07:33:29  22 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_UV__0  [[32mPASS[0m in 0.70s]
+[2025-05-01T07:33:29.130+0000] {subprocess.py:93} INFO - [0m07:33:29  23 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_WIND_MPH__0  [RUN]
+[2025-05-01T07:33:29.821+0000] {subprocess.py:93} INFO - [0m07:33:29  23 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_WIND_MPH__0  [[32mPASS[0m in 0.69s]
+[2025-05-01T07:33:29.825+0000] {subprocess.py:93} INFO - [0m07:33:29  24 of 60 START test not_null_average_sj_weather_AVERAGE_HUMIDITY ............... [RUN]
+[2025-05-01T07:33:30.634+0000] {subprocess.py:93} INFO - [0m07:33:30  24 of 60 PASS not_null_average_sj_weather_AVERAGE_HUMIDITY ..................... [[32mPASS[0m in 0.81s]
+[2025-05-01T07:33:30.636+0000] {subprocess.py:93} INFO - [0m07:33:30  25 of 60 START test not_null_average_sj_weather_AVERAGE_PRECIP_IN .............. [RUN]
+[2025-05-01T07:33:31.621+0000] {subprocess.py:93} INFO - [0m07:33:31  25 of 60 PASS not_null_average_sj_weather_AVERAGE_PRECIP_IN .................... [[32mPASS[0m in 0.98s]
+[2025-05-01T07:33:31.624+0000] {subprocess.py:93} INFO - [0m07:33:31  26 of 60 START test not_null_average_sj_weather_AVERAGE_TEMP ................... [RUN]
+[2025-05-01T07:33:32.353+0000] {subprocess.py:93} INFO - [0m07:33:32  26 of 60 PASS not_null_average_sj_weather_AVERAGE_TEMP ......................... [[32mPASS[0m in 0.73s]
+[2025-05-01T07:33:32.356+0000] {subprocess.py:93} INFO - [0m07:33:32  27 of 60 START test not_null_average_sj_weather_AVERAGE_UV ..................... [RUN]
+[2025-05-01T07:33:33.132+0000] {subprocess.py:93} INFO - [0m07:33:33  27 of 60 PASS not_null_average_sj_weather_AVERAGE_UV ........................... [[32mPASS[0m in 0.77s]
+[2025-05-01T07:33:33.135+0000] {subprocess.py:93} INFO - [0m07:33:33  28 of 60 START test not_null_average_sj_weather_AVERAGE_WIND_MPH ............... [RUN]
+[2025-05-01T07:33:33.835+0000] {subprocess.py:93} INFO - [0m07:33:33  28 of 60 PASS not_null_average_sj_weather_AVERAGE_WIND_MPH ..................... [[32mPASS[0m in 0.70s]
+[2025-05-01T07:33:33.839+0000] {subprocess.py:93} INFO - [0m07:33:33  29 of 60 START test not_null_average_zipcode_data_AVERAGE_CLOUDINESS ........... [RUN]
+[2025-05-01T07:33:34.709+0000] {subprocess.py:93} INFO - [0m07:33:34  29 of 60 PASS not_null_average_zipcode_data_AVERAGE_CLOUDINESS ................. [[32mPASS[0m in 0.87s]
+[2025-05-01T07:33:34.713+0000] {subprocess.py:93} INFO - [0m07:33:34  30 of 60 START test not_null_average_zipcode_data_AVERAGE_GUST_SPEED_KPH ....... [RUN]
+[2025-05-01T07:33:35.416+0000] {subprocess.py:93} INFO - [0m07:33:35  30 of 60 PASS not_null_average_zipcode_data_AVERAGE_GUST_SPEED_KPH ............. [[32mPASS[0m in 0.70s]
+[2025-05-01T07:33:35.419+0000] {subprocess.py:93} INFO - [0m07:33:35  31 of 60 START test not_null_average_zipcode_data_AVERAGE_HUMIDITY ............. [RUN]
+[2025-05-01T07:33:37.993+0000] {subprocess.py:93} INFO - [0m07:33:37  31 of 60 PASS not_null_average_zipcode_data_AVERAGE_HUMIDITY ................... [[32mPASS[0m in 2.57s]
+[2025-05-01T07:33:37.998+0000] {subprocess.py:93} INFO - [0m07:33:37  32 of 60 START test not_null_average_zipcode_data_AVERAGE_TEMPERATURE .......... [RUN]
+[2025-05-01T07:33:38.716+0000] {subprocess.py:93} INFO - [0m07:33:38  32 of 60 PASS not_null_average_zipcode_data_AVERAGE_TEMPERATURE ................ [[32mPASS[0m in 0.72s]
+[2025-05-01T07:33:38.717+0000] {subprocess.py:93} INFO - [0m07:33:38  33 of 60 START test not_null_average_zipcode_data_AVERAGE_UV ................... [RUN]
+[2025-05-01T07:33:40.681+0000] {subprocess.py:93} INFO - [0m07:33:40  33 of 60 PASS not_null_average_zipcode_data_AVERAGE_UV ......................... [[32mPASS[0m in 1.96s]
+[2025-05-01T07:33:40.684+0000] {subprocess.py:93} INFO - [0m07:33:40  34 of 60 START test not_null_average_zipcode_data_AVERAGE_WIND_SPEED_MPH ....... [RUN]
+[2025-05-01T07:33:41.363+0000] {subprocess.py:93} INFO - [0m07:33:41  34 of 60 PASS not_null_average_zipcode_data_AVERAGE_WIND_SPEED_MPH ............. [[32mPASS[0m in 0.68s]
+[2025-05-01T07:33:41.366+0000] {subprocess.py:93} INFO - [0m07:33:41  35 of 60 START test not_null_average_zipcode_data_EARLIEST_RECORD_DATE ......... [RUN]
+[2025-05-01T07:33:42.078+0000] {subprocess.py:93} INFO - [0m07:33:42  35 of 60 PASS not_null_average_zipcode_data_EARLIEST_RECORD_DATE ............... [[32mPASS[0m in 0.71s]
+[2025-05-01T07:33:42.081+0000] {subprocess.py:93} INFO - [0m07:33:42  36 of 60 START test not_null_average_zipcode_data_LATEST_RECORD_DATE ........... [RUN]
+[2025-05-01T07:33:42.774+0000] {subprocess.py:93} INFO - [0m07:33:42  36 of 60 PASS not_null_average_zipcode_data_LATEST_RECORD_DATE ................. [[32mPASS[0m in 0.69s]
+[2025-05-01T07:33:42.776+0000] {subprocess.py:93} INFO - [0m07:33:42  37 of 60 START test not_null_average_zipcode_data_REGION ....................... [RUN]
+[2025-05-01T07:33:43.471+0000] {subprocess.py:93} INFO - [0m07:33:43  37 of 60 PASS not_null_average_zipcode_data_REGION ............................. [[32mPASS[0m in 0.69s]
+[2025-05-01T07:33:43.473+0000] {subprocess.py:93} INFO - [0m07:33:43  38 of 60 START test not_null_average_zipcode_data_TOTAL_RAINFALL_INCHES ........ [RUN]
+[2025-05-01T07:33:44.190+0000] {subprocess.py:93} INFO - [0m07:33:44  38 of 60 PASS not_null_average_zipcode_data_TOTAL_RAINFALL_INCHES .............. [[32mPASS[0m in 0.71s]
+[2025-05-01T07:33:44.192+0000] {subprocess.py:93} INFO - [0m07:33:44  39 of 60 START test not_null_filtered_zipcode_data_REGION ...................... [RUN]
+[2025-05-01T07:33:45.065+0000] {subprocess.py:93} INFO - [0m07:33:45  39 of 60 PASS not_null_filtered_zipcode_data_REGION ............................ [[32mPASS[0m in 0.87s]
+[2025-05-01T07:33:45.068+0000] {subprocess.py:93} INFO - [0m07:33:45  40 of 60 START test not_null_raw_sj_weather_data_CLOUDINESS .................... [RUN]
+[2025-05-01T07:33:45.789+0000] {subprocess.py:93} INFO - [0m07:33:45  40 of 60 PASS not_null_raw_sj_weather_data_CLOUDINESS .......................... [[32mPASS[0m in 0.72s]
+[2025-05-01T07:33:45.795+0000] {subprocess.py:93} INFO - [0m07:33:45  41 of 60 START test not_null_raw_sj_weather_data_HUMIDITY ...................... [RUN]
+[2025-05-01T07:33:46.918+0000] {subprocess.py:93} INFO - [0m07:33:46  41 of 60 PASS not_null_raw_sj_weather_data_HUMIDITY ............................ [[32mPASS[0m in 1.12s]
+[2025-05-01T07:33:46.920+0000] {subprocess.py:93} INFO - [0m07:33:46  42 of 60 START test not_null_raw_sj_weather_data_PRECIP_IN ..................... [RUN]
+[2025-05-01T07:33:47.861+0000] {subprocess.py:93} INFO - [0m07:33:47  42 of 60 PASS not_null_raw_sj_weather_data_PRECIP_IN ........................... [[32mPASS[0m in 0.94s]
+[2025-05-01T07:33:47.863+0000] {subprocess.py:93} INFO - [0m07:33:47  43 of 60 START test not_null_raw_sj_weather_data_TEMP_F ........................ [RUN]
+[2025-05-01T07:33:48.554+0000] {subprocess.py:93} INFO - [0m07:33:48  43 of 60 PASS not_null_raw_sj_weather_data_TEMP_F .............................. [[32mPASS[0m in 0.69s]
+[2025-05-01T07:33:48.555+0000] {subprocess.py:93} INFO - [0m07:33:48  44 of 60 START test not_null_raw_sj_weather_data_UV ............................ [RUN]
+[2025-05-01T07:33:49.224+0000] {subprocess.py:93} INFO - [0m07:33:49  44 of 60 PASS not_null_raw_sj_weather_data_UV .................................. [[32mPASS[0m in 0.67s]
+[2025-05-01T07:33:49.226+0000] {subprocess.py:93} INFO - [0m07:33:49  45 of 60 START test not_null_raw_sj_weather_data_WIND_MPH ...................... [RUN]
+[2025-05-01T07:33:50.194+0000] {subprocess.py:93} INFO - [0m07:33:50  45 of 60 PASS not_null_raw_sj_weather_data_WIND_MPH ............................ [[32mPASS[0m in 0.97s]
+[2025-05-01T07:33:50.196+0000] {subprocess.py:93} INFO - [0m07:33:50  46 of 60 START test not_null_raw_sj_weather_data__localtime_ ................... [RUN]
+[2025-05-01T07:33:51.417+0000] {subprocess.py:93} INFO - [0m07:33:51  46 of 60 PASS not_null_raw_sj_weather_data__localtime_ ......................... [[32mPASS[0m in 1.22s]
+[2025-05-01T07:33:51.421+0000] {subprocess.py:93} INFO - [0m07:33:51  47 of 60 START test not_null_raw_zipcode_weather_data_CLOUDINESS ............... [RUN]
+[2025-05-01T07:33:52.623+0000] {subprocess.py:93} INFO - [0m07:33:52  47 of 60 PASS not_null_raw_zipcode_weather_data_CLOUDINESS ..................... [[32mPASS[0m in 1.20s]
+[2025-05-01T07:33:52.624+0000] {subprocess.py:93} INFO - [0m07:33:52  48 of 60 START test not_null_raw_zipcode_weather_data_CONDITION ................ [RUN]
+[2025-05-01T07:33:53.354+0000] {subprocess.py:93} INFO - [0m07:33:53  48 of 60 PASS not_null_raw_zipcode_weather_data_CONDITION ...................... [[32mPASS[0m in 0.73s]
+[2025-05-01T07:33:53.357+0000] {subprocess.py:93} INFO - [0m07:33:53  49 of 60 START test not_null_raw_zipcode_weather_data_GUST_KPH ................. [RUN]
+[2025-05-01T07:33:54.086+0000] {subprocess.py:93} INFO - [0m07:33:54  49 of 60 PASS not_null_raw_zipcode_weather_data_GUST_KPH ....................... [[32mPASS[0m in 0.72s]
+[2025-05-01T07:33:54.098+0000] {subprocess.py:93} INFO - [0m07:33:54  50 of 60 START test not_null_raw_zipcode_weather_data_HUMIDITY ................. [RUN]
+[2025-05-01T07:33:55.668+0000] {subprocess.py:93} INFO - [0m07:33:55  50 of 60 PASS not_null_raw_zipcode_weather_data_HUMIDITY ....................... [[32mPASS[0m in 1.57s]
+[2025-05-01T07:33:55.671+0000] {subprocess.py:93} INFO - [0m07:33:55  51 of 60 START test not_null_raw_zipcode_weather_data_LAT ...................... [RUN]
+[2025-05-01T07:33:56.427+0000] {subprocess.py:93} INFO - [0m07:33:56  51 of 60 PASS not_null_raw_zipcode_weather_data_LAT ............................ [[32mPASS[0m in 0.75s]
+[2025-05-01T07:33:56.430+0000] {subprocess.py:93} INFO - [0m07:33:56  52 of 60 START test not_null_raw_zipcode_weather_data_LOCATION_NAME ............ [RUN]
+[2025-05-01T07:33:57.154+0000] {subprocess.py:93} INFO - [0m07:33:57  52 of 60 PASS not_null_raw_zipcode_weather_data_LOCATION_NAME .................. [[32mPASS[0m in 0.72s]
+[2025-05-01T07:33:57.157+0000] {subprocess.py:93} INFO - [0m07:33:57  53 of 60 START test not_null_raw_zipcode_weather_data_LON ...................... [RUN]
+[2025-05-01T07:33:57.850+0000] {subprocess.py:93} INFO - [0m07:33:57  53 of 60 PASS not_null_raw_zipcode_weather_data_LON ............................ [[32mPASS[0m in 0.69s]
+[2025-05-01T07:33:57.851+0000] {subprocess.py:93} INFO - [0m07:33:57  54 of 60 START test not_null_raw_zipcode_weather_data_PRECIP_IN ................ [RUN]
+[2025-05-01T07:33:58.555+0000] {subprocess.py:93} INFO - [0m07:33:58  54 of 60 PASS not_null_raw_zipcode_weather_data_PRECIP_IN ...................... [[32mPASS[0m in 0.70s]
+[2025-05-01T07:33:58.556+0000] {subprocess.py:93} INFO - [0m07:33:58  55 of 60 START test not_null_raw_zipcode_weather_data_TEMP_F ................... [RUN]
+[2025-05-01T07:33:59.279+0000] {subprocess.py:93} INFO - [0m07:33:59  55 of 60 PASS not_null_raw_zipcode_weather_data_TEMP_F ......................... [[32mPASS[0m in 0.72s]
+[2025-05-01T07:33:59.282+0000] {subprocess.py:93} INFO - [0m07:33:59  56 of 60 START test not_null_raw_zipcode_weather_data_UV ....................... [RUN]
+[2025-05-01T07:34:00.350+0000] {subprocess.py:93} INFO - [0m07:34:00  56 of 60 PASS not_null_raw_zipcode_weather_data_UV ............................. [[32mPASS[0m in 1.07s]
+[2025-05-01T07:34:00.353+0000] {subprocess.py:93} INFO - [0m07:34:00  57 of 60 START test not_null_raw_zipcode_weather_data_WIND_DIR ................. [RUN]
+[2025-05-01T07:34:01.858+0000] {subprocess.py:93} INFO - [0m07:34:01  57 of 60 PASS not_null_raw_zipcode_weather_data_WIND_DIR ....................... [[32mPASS[0m in 1.50s]
+[2025-05-01T07:34:01.861+0000] {subprocess.py:93} INFO - [0m07:34:01  58 of 60 START test not_null_raw_zipcode_weather_data_WIND_MPH ................. [RUN]
+[2025-05-01T07:34:02.807+0000] {subprocess.py:93} INFO - [0m07:34:02  58 of 60 PASS not_null_raw_zipcode_weather_data_WIND_MPH ....................... [[32mPASS[0m in 0.94s]
+[2025-05-01T07:34:02.809+0000] {subprocess.py:93} INFO - [0m07:34:02  59 of 60 START test not_null_raw_zipcode_weather_data_localtime ................ [RUN]
+[2025-05-01T07:34:03.548+0000] {subprocess.py:93} INFO - [0m07:34:03  59 of 60 PASS not_null_raw_zipcode_weather_data_localtime ...................... [[32mPASS[0m in 0.74s]
+[2025-05-01T07:34:03.551+0000] {subprocess.py:93} INFO - [0m07:34:03  60 of 60 START test unique_raw_sj_weather_data__localtime_ ..................... [RUN]
+[2025-05-01T07:34:04.287+0000] {subprocess.py:93} INFO - [0m07:34:04  60 of 60 PASS unique_raw_sj_weather_data__localtime_ ........................... [[32mPASS[0m in 0.74s]
+[2025-05-01T07:34:04.290+0000] {subprocess.py:93} INFO - [0m07:34:04
+[2025-05-01T07:34:04.291+0000] {subprocess.py:93} INFO - [0m07:34:04  Finished running 60 data tests in 0 hours 0 minutes and 56.92 seconds (56.92s).
+[2025-05-01T07:34:04.340+0000] {subprocess.py:93} INFO - [0m07:34:04
+[2025-05-01T07:34:04.340+0000] {subprocess.py:93} INFO - [0m07:34:04  [32mCompleted successfully[0m
+[2025-05-01T07:34:04.341+0000] {subprocess.py:93} INFO - [0m07:34:04
+[2025-05-01T07:34:04.341+0000] {subprocess.py:93} INFO - [0m07:34:04  Done. PASS=60 WARN=0 ERROR=0 SKIP=0 TOTAL=60
+[2025-05-01T07:34:05.138+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T07:34:05.173+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:34:05.173+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_test, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T073305, end_date=20250501T073405
+[2025-05-01T07:34:05.216+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:34:05.229+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:34:05.230+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:35:12.093+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:35:12.101+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:35:12.105+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:35:12.105+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:35:12.110+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_test> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:35:12.115+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_test', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '115', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpm2goza_i']
+[2025-05-01T07:35:12.116+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1960) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:35:12.116+0000] {standard_task_runner.py:105} INFO - Job 115: Subtask dbt_test
+[2025-05-01T07:35:12.116+0000] {standard_task_runner.py:72} INFO - Started process 1961 to run task
+[2025-05-01T07:35:12.137+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:35:12.164+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:35:12.164+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:35:12.173+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:35:12.173+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt test --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:35:12.177+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:35:13.141+0000] {subprocess.py:93} INFO - [0m07:35:13  Running with dbt=1.9.0-b4
+[2025-05-01T07:35:13.614+0000] {subprocess.py:93} INFO - [0m07:35:13  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:35:13.836+0000] {subprocess.py:93} INFO - [0m07:35:13  Found 6 models, 2 snapshots, 60 data tests, 2 sources, 725 macros
+[2025-05-01T07:35:13.837+0000] {subprocess.py:93} INFO - [0m07:35:13
+[2025-05-01T07:35:13.838+0000] {subprocess.py:93} INFO - [0m07:35:13  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:35:13.838+0000] {subprocess.py:93} INFO - [0m07:35:13
+[2025-05-01T07:35:16.986+0000] {subprocess.py:93} INFO - [0m07:35:16  1 of 60 START test accepted_values_average_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [RUN]
+[2025-05-01T07:35:17.831+0000] {subprocess.py:93} INFO - [0m07:35:17  1 of 60 PASS accepted_values_average_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [[32mPASS[0m in 0.84s]
+[2025-05-01T07:35:17.834+0000] {subprocess.py:93} INFO - [0m07:35:17  2 of 60 START test accepted_values_filtered_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [RUN]
+[2025-05-01T07:35:18.794+0000] {subprocess.py:93} INFO - [0m07:35:18  2 of 60 PASS accepted_values_filtered_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [[32mPASS[0m in 0.96s]
+[2025-05-01T07:35:18.796+0000] {subprocess.py:93} INFO - [0m07:35:18  3 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_HUMIDITY__0  [RUN]
+[2025-05-01T07:35:20.122+0000] {subprocess.py:93} INFO - [0m07:35:20  3 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_HUMIDITY__0  [[32mPASS[0m in 1.32s]
+[2025-05-01T07:35:20.124+0000] {subprocess.py:93} INFO - [0m07:35:20  4 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_PRECIP_IN__0  [RUN]
+[2025-05-01T07:35:20.986+0000] {subprocess.py:93} INFO - [0m07:35:20  4 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_PRECIP_IN__0  [[32mPASS[0m in 0.86s]
+[2025-05-01T07:35:20.989+0000] {subprocess.py:93} INFO - [0m07:35:20  5 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_UV__0  [RUN]
+[2025-05-01T07:35:21.797+0000] {subprocess.py:93} INFO - [0m07:35:21  5 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_UV__0  [[32mPASS[0m in 0.81s]
+[2025-05-01T07:35:21.797+0000] {subprocess.py:93} INFO - [0m07:35:21  6 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_WIND_MPH__0  [RUN]
+[2025-05-01T07:35:22.912+0000] {subprocess.py:93} INFO - [0m07:35:22  6 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_WIND_MPH__0  [[32mPASS[0m in 1.11s]
+[2025-05-01T07:35:22.915+0000] {subprocess.py:93} INFO - [0m07:35:22  7 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_CLOUDINESS__0  [RUN]
+[2025-05-01T07:35:24.025+0000] {subprocess.py:93} INFO - [0m07:35:24  7 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_CLOUDINESS__0  [[32mPASS[0m in 1.11s]
+[2025-05-01T07:35:24.027+0000] {subprocess.py:93} INFO - [0m07:35:24  8 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_GUST_SPEED_KPH__0  [RUN]
+[2025-05-01T07:35:24.776+0000] {subprocess.py:93} INFO - [0m07:35:24  8 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_GUST_SPEED_KPH__0  [[32mPASS[0m in 0.75s]
+[2025-05-01T07:35:24.777+0000] {subprocess.py:93} INFO - [0m07:35:24  9 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_HUMIDITY__0  [RUN]
+[2025-05-01T07:35:25.717+0000] {subprocess.py:93} INFO - [0m07:35:25  9 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_HUMIDITY__0  [[32mPASS[0m in 0.94s]
+[2025-05-01T07:35:25.718+0000] {subprocess.py:93} INFO - [0m07:35:25  10 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_UV__0  [RUN]
+[2025-05-01T07:35:26.714+0000] {subprocess.py:93} INFO - [0m07:35:26  10 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_UV__0  [[32mPASS[0m in 0.99s]
+[2025-05-01T07:35:26.716+0000] {subprocess.py:93} INFO - [0m07:35:26  11 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_WIND_SPEED_MPH__0  [RUN]
+[2025-05-01T07:35:27.720+0000] {subprocess.py:93} INFO - [0m07:35:27  11 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_WIND_SPEED_MPH__0  [[32mPASS[0m in 1.00s]
+[2025-05-01T07:35:27.723+0000] {subprocess.py:93} INFO - [0m07:35:27  12 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_TOTAL_RAINFALL_INCHES__0  [RUN]
+[2025-05-01T07:35:28.980+0000] {subprocess.py:93} INFO - [0m07:35:28  12 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_TOTAL_RAINFALL_INCHES__0  [[32mPASS[0m in 1.25s]
+[2025-05-01T07:35:28.983+0000] {subprocess.py:93} INFO - [0m07:35:28  13 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_CLOUDINESS__100__0  [RUN]
+[2025-05-01T07:35:30.013+0000] {subprocess.py:93} INFO - [0m07:35:30  13 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_CLOUDINESS__100__0  [[32mPASS[0m in 1.03s]
+[2025-05-01T07:35:30.016+0000] {subprocess.py:93} INFO - [0m07:35:30  14 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_HUMIDITY__0  [RUN]
+[2025-05-01T07:35:30.792+0000] {subprocess.py:93} INFO - [0m07:35:30  14 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_HUMIDITY__0  [[32mPASS[0m in 0.77s]
+[2025-05-01T07:35:30.793+0000] {subprocess.py:93} INFO - [0m07:35:30  15 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_PRECIP_IN__0  [RUN]
+[2025-05-01T07:35:31.558+0000] {subprocess.py:93} INFO - [0m07:35:31  15 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_PRECIP_IN__0  [[32mPASS[0m in 0.76s]
+[2025-05-01T07:35:31.565+0000] {subprocess.py:93} INFO - [0m07:35:31  16 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_UV__0  [RUN]
+[2025-05-01T07:35:32.629+0000] {subprocess.py:93} INFO - [0m07:35:32  16 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_UV__0  [[32mPASS[0m in 1.06s]
+[2025-05-01T07:35:32.631+0000] {subprocess.py:93} INFO - [0m07:35:32  17 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_WIND_MPH__0  [RUN]
+[2025-05-01T07:35:33.429+0000] {subprocess.py:93} INFO - [0m07:35:33  17 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_WIND_MPH__0  [[32mPASS[0m in 0.80s]
+[2025-05-01T07:35:33.430+0000] {subprocess.py:93} INFO - [0m07:35:33  18 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_CLOUDINESS__100__0  [RUN]
+[2025-05-01T07:35:34.113+0000] {subprocess.py:93} INFO - [0m07:35:34  18 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_CLOUDINESS__100__0  [[32mPASS[0m in 0.68s]
+[2025-05-01T07:35:34.120+0000] {subprocess.py:93} INFO - [0m07:35:34  19 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_GUST_KPH__0  [RUN]
+[2025-05-01T07:35:34.985+0000] {subprocess.py:93} INFO - [0m07:35:34  19 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_GUST_KPH__0  [[32mPASS[0m in 0.86s]
+[2025-05-01T07:35:34.988+0000] {subprocess.py:93} INFO - [0m07:35:34  20 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_HUMIDITY__0  [RUN]
+[2025-05-01T07:35:36.601+0000] {subprocess.py:93} INFO - [0m07:35:36  20 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_HUMIDITY__0  [[32mPASS[0m in 1.61s]
+[2025-05-01T07:35:36.605+0000] {subprocess.py:93} INFO - [0m07:35:36  21 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_PRECIP_IN__0  [RUN]
+[2025-05-01T07:35:38.901+0000] {subprocess.py:93} INFO - [0m07:35:38  21 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_PRECIP_IN__0  [[32mPASS[0m in 2.30s]
+[2025-05-01T07:35:38.904+0000] {subprocess.py:93} INFO - [0m07:35:38  22 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_UV__0  [RUN]
+[2025-05-01T07:35:39.762+0000] {subprocess.py:93} INFO - [0m07:35:39  22 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_UV__0  [[32mPASS[0m in 0.86s]
+[2025-05-01T07:35:39.766+0000] {subprocess.py:93} INFO - [0m07:35:39  23 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_WIND_MPH__0  [RUN]
+[2025-05-01T07:35:41.102+0000] {subprocess.py:93} INFO - [0m07:35:41  23 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_WIND_MPH__0  [[32mPASS[0m in 1.33s]
+[2025-05-01T07:35:41.104+0000] {subprocess.py:93} INFO - [0m07:35:41  24 of 60 START test not_null_average_sj_weather_AVERAGE_HUMIDITY ............... [RUN]
+[2025-05-01T07:35:41.834+0000] {subprocess.py:93} INFO - [0m07:35:41  24 of 60 PASS not_null_average_sj_weather_AVERAGE_HUMIDITY ..................... [[32mPASS[0m in 0.73s]
+[2025-05-01T07:35:41.836+0000] {subprocess.py:93} INFO - [0m07:35:41  25 of 60 START test not_null_average_sj_weather_AVERAGE_PRECIP_IN .............. [RUN]
+[2025-05-01T07:35:42.664+0000] {subprocess.py:93} INFO - [0m07:35:42  25 of 60 PASS not_null_average_sj_weather_AVERAGE_PRECIP_IN .................... [[32mPASS[0m in 0.83s]
+[2025-05-01T07:35:42.668+0000] {subprocess.py:93} INFO - [0m07:35:42  26 of 60 START test not_null_average_sj_weather_AVERAGE_TEMP ................... [RUN]
+[2025-05-01T07:35:43.364+0000] {subprocess.py:93} INFO - [0m07:35:43  26 of 60 PASS not_null_average_sj_weather_AVERAGE_TEMP ......................... [[32mPASS[0m in 0.70s]
+[2025-05-01T07:35:43.365+0000] {subprocess.py:93} INFO - [0m07:35:43  27 of 60 START test not_null_average_sj_weather_AVERAGE_UV ..................... [RUN]
+[2025-05-01T07:35:44.070+0000] {subprocess.py:93} INFO - [0m07:35:44  27 of 60 PASS not_null_average_sj_weather_AVERAGE_UV ........................... [[32mPASS[0m in 0.70s]
+[2025-05-01T07:35:44.073+0000] {subprocess.py:93} INFO - [0m07:35:44  28 of 60 START test not_null_average_sj_weather_AVERAGE_WIND_MPH ............... [RUN]
+[2025-05-01T07:35:44.979+0000] {subprocess.py:93} INFO - [0m07:35:44  28 of 60 PASS not_null_average_sj_weather_AVERAGE_WIND_MPH ..................... [[32mPASS[0m in 0.90s]
+[2025-05-01T07:35:44.982+0000] {subprocess.py:93} INFO - [0m07:35:44  29 of 60 START test not_null_average_zipcode_data_AVERAGE_CLOUDINESS ........... [RUN]
+[2025-05-01T07:35:45.656+0000] {subprocess.py:93} INFO - [0m07:35:45  29 of 60 PASS not_null_average_zipcode_data_AVERAGE_CLOUDINESS ................. [[32mPASS[0m in 0.67s]
+[2025-05-01T07:35:45.658+0000] {subprocess.py:93} INFO - [0m07:35:45  30 of 60 START test not_null_average_zipcode_data_AVERAGE_GUST_SPEED_KPH ....... [RUN]
+[2025-05-01T07:35:46.854+0000] {subprocess.py:93} INFO - [0m07:35:46  30 of 60 PASS not_null_average_zipcode_data_AVERAGE_GUST_SPEED_KPH ............. [[32mPASS[0m in 1.19s]
+[2025-05-01T07:35:46.856+0000] {subprocess.py:93} INFO - [0m07:35:46  31 of 60 START test not_null_average_zipcode_data_AVERAGE_HUMIDITY ............. [RUN]
+[2025-05-01T07:35:47.700+0000] {subprocess.py:93} INFO - [0m07:35:47  31 of 60 PASS not_null_average_zipcode_data_AVERAGE_HUMIDITY ................... [[32mPASS[0m in 0.84s]
+[2025-05-01T07:35:47.702+0000] {subprocess.py:93} INFO - [0m07:35:47  32 of 60 START test not_null_average_zipcode_data_AVERAGE_TEMPERATURE .......... [RUN]
+[2025-05-01T07:35:48.361+0000] {subprocess.py:93} INFO - [0m07:35:48  32 of 60 PASS not_null_average_zipcode_data_AVERAGE_TEMPERATURE ................ [[32mPASS[0m in 0.66s]
+[2025-05-01T07:35:48.370+0000] {subprocess.py:93} INFO - [0m07:35:48  33 of 60 START test not_null_average_zipcode_data_AVERAGE_UV ................... [RUN]
+[2025-05-01T07:35:49.093+0000] {subprocess.py:93} INFO - [0m07:35:49  33 of 60 PASS not_null_average_zipcode_data_AVERAGE_UV ......................... [[32mPASS[0m in 0.72s]
+[2025-05-01T07:35:49.096+0000] {subprocess.py:93} INFO - [0m07:35:49  34 of 60 START test not_null_average_zipcode_data_AVERAGE_WIND_SPEED_MPH ....... [RUN]
+[2025-05-01T07:35:49.984+0000] {subprocess.py:93} INFO - [0m07:35:49  34 of 60 PASS not_null_average_zipcode_data_AVERAGE_WIND_SPEED_MPH ............. [[32mPASS[0m in 0.89s]
+[2025-05-01T07:35:49.986+0000] {subprocess.py:93} INFO - [0m07:35:49  35 of 60 START test not_null_average_zipcode_data_EARLIEST_RECORD_DATE ......... [RUN]
+[2025-05-01T07:35:51.244+0000] {subprocess.py:93} INFO - [0m07:35:51  35 of 60 PASS not_null_average_zipcode_data_EARLIEST_RECORD_DATE ............... [[32mPASS[0m in 1.26s]
+[2025-05-01T07:35:51.249+0000] {subprocess.py:93} INFO - [0m07:35:51  36 of 60 START test not_null_average_zipcode_data_LATEST_RECORD_DATE ........... [RUN]
+[2025-05-01T07:35:52.771+0000] {subprocess.py:93} INFO - [0m07:35:52  36 of 60 PASS not_null_average_zipcode_data_LATEST_RECORD_DATE ................. [[32mPASS[0m in 1.52s]
+[2025-05-01T07:35:52.773+0000] {subprocess.py:93} INFO - [0m07:35:52  37 of 60 START test not_null_average_zipcode_data_REGION ....................... [RUN]
+[2025-05-01T07:35:53.865+0000] {subprocess.py:93} INFO - [0m07:35:53  37 of 60 PASS not_null_average_zipcode_data_REGION ............................. [[32mPASS[0m in 1.09s]
+[2025-05-01T07:35:53.868+0000] {subprocess.py:93} INFO - [0m07:35:53  38 of 60 START test not_null_average_zipcode_data_TOTAL_RAINFALL_INCHES ........ [RUN]
+[2025-05-01T07:35:55.559+0000] {subprocess.py:93} INFO - [0m07:35:55  38 of 60 PASS not_null_average_zipcode_data_TOTAL_RAINFALL_INCHES .............. [[32mPASS[0m in 1.69s]
+[2025-05-01T07:35:55.562+0000] {subprocess.py:93} INFO - [0m07:35:55  39 of 60 START test not_null_filtered_zipcode_data_REGION ...................... [RUN]
+[2025-05-01T07:35:56.564+0000] {subprocess.py:93} INFO - [0m07:35:56  39 of 60 PASS not_null_filtered_zipcode_data_REGION ............................ [[32mPASS[0m in 1.00s]
+[2025-05-01T07:35:56.567+0000] {subprocess.py:93} INFO - [0m07:35:56  40 of 60 START test not_null_raw_sj_weather_data_CLOUDINESS .................... [RUN]
+[2025-05-01T07:35:57.296+0000] {subprocess.py:93} INFO - [0m07:35:57  40 of 60 PASS not_null_raw_sj_weather_data_CLOUDINESS .......................... [[32mPASS[0m in 0.73s]
+[2025-05-01T07:35:57.298+0000] {subprocess.py:93} INFO - [0m07:35:57  41 of 60 START test not_null_raw_sj_weather_data_HUMIDITY ...................... [RUN]
+[2025-05-01T07:35:58.625+0000] {subprocess.py:93} INFO - [0m07:35:58  41 of 60 PASS not_null_raw_sj_weather_data_HUMIDITY ............................ [[32mPASS[0m in 1.33s]
+[2025-05-01T07:35:58.627+0000] {subprocess.py:93} INFO - [0m07:35:58  42 of 60 START test not_null_raw_sj_weather_data_PRECIP_IN ..................... [RUN]
+[2025-05-01T07:35:59.466+0000] {subprocess.py:93} INFO - [0m07:35:59  42 of 60 PASS not_null_raw_sj_weather_data_PRECIP_IN ........................... [[32mPASS[0m in 0.84s]
+[2025-05-01T07:35:59.469+0000] {subprocess.py:93} INFO - [0m07:35:59  43 of 60 START test not_null_raw_sj_weather_data_TEMP_F ........................ [RUN]
+[2025-05-01T07:36:00.349+0000] {subprocess.py:93} INFO - [0m07:36:00  43 of 60 PASS not_null_raw_sj_weather_data_TEMP_F .............................. [[32mPASS[0m in 0.88s]
+[2025-05-01T07:36:00.352+0000] {subprocess.py:93} INFO - [0m07:36:00  44 of 60 START test not_null_raw_sj_weather_data_UV ............................ [RUN]
+[2025-05-01T07:36:01.104+0000] {subprocess.py:93} INFO - [0m07:36:01  44 of 60 PASS not_null_raw_sj_weather_data_UV .................................. [[32mPASS[0m in 0.75s]
+[2025-05-01T07:36:01.110+0000] {subprocess.py:93} INFO - [0m07:36:01  45 of 60 START test not_null_raw_sj_weather_data_WIND_MPH ...................... [RUN]
+[2025-05-01T07:36:01.866+0000] {subprocess.py:93} INFO - [0m07:36:01  45 of 60 PASS not_null_raw_sj_weather_data_WIND_MPH ............................ [[32mPASS[0m in 0.75s]
+[2025-05-01T07:36:01.869+0000] {subprocess.py:93} INFO - [0m07:36:01  46 of 60 START test not_null_raw_sj_weather_data__localtime_ ................... [RUN]
+[2025-05-01T07:36:02.611+0000] {subprocess.py:93} INFO - [0m07:36:02  46 of 60 PASS not_null_raw_sj_weather_data__localtime_ ......................... [[32mPASS[0m in 0.74s]
+[2025-05-01T07:36:02.614+0000] {subprocess.py:93} INFO - [0m07:36:02  47 of 60 START test not_null_raw_zipcode_weather_data_CLOUDINESS ............... [RUN]
+[2025-05-01T07:36:03.345+0000] {subprocess.py:93} INFO - [0m07:36:03  47 of 60 PASS not_null_raw_zipcode_weather_data_CLOUDINESS ..................... [[32mPASS[0m in 0.73s]
+[2025-05-01T07:36:03.348+0000] {subprocess.py:93} INFO - [0m07:36:03  48 of 60 START test not_null_raw_zipcode_weather_data_CONDITION ................ [RUN]
+[2025-05-01T07:36:04.649+0000] {subprocess.py:93} INFO - [0m07:36:04  48 of 60 PASS not_null_raw_zipcode_weather_data_CONDITION ...................... [[32mPASS[0m in 1.30s]
+[2025-05-01T07:36:04.652+0000] {subprocess.py:93} INFO - [0m07:36:04  49 of 60 START test not_null_raw_zipcode_weather_data_GUST_KPH ................. [RUN]
+[2025-05-01T07:36:05.478+0000] {subprocess.py:93} INFO - [0m07:36:05  49 of 60 PASS not_null_raw_zipcode_weather_data_GUST_KPH ....................... [[32mPASS[0m in 0.82s]
+[2025-05-01T07:36:05.481+0000] {subprocess.py:93} INFO - [0m07:36:05  50 of 60 START test not_null_raw_zipcode_weather_data_HUMIDITY ................. [RUN]
+[2025-05-01T07:36:07.430+0000] {subprocess.py:93} INFO - [0m07:36:07  50 of 60 PASS not_null_raw_zipcode_weather_data_HUMIDITY ....................... [[32mPASS[0m in 1.95s]
+[2025-05-01T07:36:07.432+0000] {subprocess.py:93} INFO - [0m07:36:07  51 of 60 START test not_null_raw_zipcode_weather_data_LAT ...................... [RUN]
+[2025-05-01T07:36:08.538+0000] {subprocess.py:93} INFO - [0m07:36:08  51 of 60 PASS not_null_raw_zipcode_weather_data_LAT ............................ [[32mPASS[0m in 1.11s]
+[2025-05-01T07:36:08.553+0000] {subprocess.py:93} INFO - [0m07:36:08  52 of 60 START test not_null_raw_zipcode_weather_data_LOCATION_NAME ............ [RUN]
+[2025-05-01T07:36:09.457+0000] {subprocess.py:93} INFO - [0m07:36:09  52 of 60 PASS not_null_raw_zipcode_weather_data_LOCATION_NAME .................. [[32mPASS[0m in 0.90s]
+[2025-05-01T07:36:09.458+0000] {subprocess.py:93} INFO - [0m07:36:09  53 of 60 START test not_null_raw_zipcode_weather_data_LON ...................... [RUN]
+[2025-05-01T07:36:10.969+0000] {subprocess.py:93} INFO - [0m07:36:10  53 of 60 PASS not_null_raw_zipcode_weather_data_LON ............................ [[32mPASS[0m in 1.51s]
+[2025-05-01T07:36:10.971+0000] {subprocess.py:93} INFO - [0m07:36:10  54 of 60 START test not_null_raw_zipcode_weather_data_PRECIP_IN ................ [RUN]
+[2025-05-01T07:36:11.761+0000] {subprocess.py:93} INFO - [0m07:36:11  54 of 60 PASS not_null_raw_zipcode_weather_data_PRECIP_IN ...................... [[32mPASS[0m in 0.79s]
+[2025-05-01T07:36:11.763+0000] {subprocess.py:93} INFO - [0m07:36:11  55 of 60 START test not_null_raw_zipcode_weather_data_TEMP_F ................... [RUN]
+[2025-05-01T07:36:13.150+0000] {subprocess.py:93} INFO - [0m07:36:13  55 of 60 PASS not_null_raw_zipcode_weather_data_TEMP_F ......................... [[32mPASS[0m in 1.38s]
+[2025-05-01T07:36:13.153+0000] {subprocess.py:93} INFO - [0m07:36:13  56 of 60 START test not_null_raw_zipcode_weather_data_UV ....................... [RUN]
+[2025-05-01T07:36:14.491+0000] {subprocess.py:93} INFO - [0m07:36:14  56 of 60 PASS not_null_raw_zipcode_weather_data_UV ............................. [[32mPASS[0m in 1.34s]
+[2025-05-01T07:36:14.493+0000] {subprocess.py:93} INFO - [0m07:36:14  57 of 60 START test not_null_raw_zipcode_weather_data_WIND_DIR ................. [RUN]
+[2025-05-01T07:36:15.275+0000] {subprocess.py:93} INFO - [0m07:36:15  57 of 60 PASS not_null_raw_zipcode_weather_data_WIND_DIR ....................... [[32mPASS[0m in 0.78s]
+[2025-05-01T07:36:15.278+0000] {subprocess.py:93} INFO - [0m07:36:15  58 of 60 START test not_null_raw_zipcode_weather_data_WIND_MPH ................. [RUN]
+[2025-05-01T07:36:15.953+0000] {subprocess.py:93} INFO - [0m07:36:15  58 of 60 PASS not_null_raw_zipcode_weather_data_WIND_MPH ....................... [[32mPASS[0m in 0.67s]
+[2025-05-01T07:36:15.955+0000] {subprocess.py:93} INFO - [0m07:36:15  59 of 60 START test not_null_raw_zipcode_weather_data_localtime ................ [RUN]
+[2025-05-01T07:36:17.359+0000] {subprocess.py:93} INFO - [0m07:36:17  59 of 60 PASS not_null_raw_zipcode_weather_data_localtime ...................... [[32mPASS[0m in 1.40s]
+[2025-05-01T07:36:17.362+0000] {subprocess.py:93} INFO - [0m07:36:17  60 of 60 START test unique_raw_sj_weather_data__localtime_ ..................... [RUN]
+[2025-05-01T07:36:18.251+0000] {subprocess.py:93} INFO - [0m07:36:18  60 of 60 PASS unique_raw_sj_weather_data__localtime_ ........................... [[32mPASS[0m in 0.89s]
+[2025-05-01T07:36:18.257+0000] {subprocess.py:93} INFO - [0m07:36:18
+[2025-05-01T07:36:18.261+0000] {subprocess.py:93} INFO - [0m07:36:18  Finished running 60 data tests in 0 hours 1 minutes and 4.42 seconds (64.42s).
+[2025-05-01T07:36:18.355+0000] {subprocess.py:93} INFO - [0m07:36:18
+[2025-05-01T07:36:18.356+0000] {subprocess.py:93} INFO - [0m07:36:18  [32mCompleted successfully[0m
+[2025-05-01T07:36:18.356+0000] {subprocess.py:93} INFO - [0m07:36:18
+[2025-05-01T07:36:18.357+0000] {subprocess.py:93} INFO - [0m07:36:18  Done. PASS=60 WARN=0 ERROR=0 SKIP=0 TOTAL=60
+[2025-05-01T07:36:19.069+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T07:36:19.088+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:36:19.089+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_test, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T073512, end_date=20250501T073619
+[2025-05-01T07:36:19.120+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:36:19.135+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:36:19.138+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:54:04.437+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:54:04.444+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:54:04.447+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:54:04.448+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:54:04.452+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_test> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:54:04.456+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_test', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '124', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpvppyswpa']
+[2025-05-01T07:54:04.457+0000] {standard_task_runner.py:105} INFO - Job 124: Subtask dbt_test
+[2025-05-01T07:54:04.457+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=3135) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:54:04.457+0000] {standard_task_runner.py:72} INFO - Started process 3136 to run task
+[2025-05-01T07:54:04.479+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:54:04.508+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:54:04.509+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:54:04.520+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:54:04.521+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt test --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:54:04.527+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:54:05.545+0000] {subprocess.py:93} INFO - [0m07:54:05  Running with dbt=1.9.0-b4
+[2025-05-01T07:54:05.993+0000] {subprocess.py:93} INFO - [0m07:54:05  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:54:06.234+0000] {subprocess.py:93} INFO - [0m07:54:06  Found 6 models, 60 data tests, 2 snapshots, 2 sources, 725 macros
+[2025-05-01T07:54:06.236+0000] {subprocess.py:93} INFO - [0m07:54:06
+[2025-05-01T07:54:06.236+0000] {subprocess.py:93} INFO - [0m07:54:06  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:54:06.236+0000] {subprocess.py:93} INFO - [0m07:54:06
+[2025-05-01T07:54:08.702+0000] {subprocess.py:93} INFO - [0m07:54:08  1 of 60 START test accepted_values_average_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [RUN]
+[2025-05-01T07:54:10.553+0000] {subprocess.py:93} INFO - [0m07:54:10  1 of 60 PASS accepted_values_average_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [[32mPASS[0m in 1.85s]
+[2025-05-01T07:54:10.556+0000] {subprocess.py:93} INFO - [0m07:54:10  2 of 60 START test accepted_values_filtered_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [RUN]
+[2025-05-01T07:54:11.710+0000] {subprocess.py:93} INFO - [0m07:54:11  2 of 60 PASS accepted_values_filtered_zipcode_data_REGION__Southern_California__Central_California__Northern_California  [[32mPASS[0m in 1.15s]
+[2025-05-01T07:54:11.712+0000] {subprocess.py:93} INFO - [0m07:54:11  3 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_HUMIDITY__0  [RUN]
+[2025-05-01T07:54:12.406+0000] {subprocess.py:93} INFO - [0m07:54:12  3 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_HUMIDITY__0  [[32mPASS[0m in 0.69s]
+[2025-05-01T07:54:12.409+0000] {subprocess.py:93} INFO - [0m07:54:12  4 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_PRECIP_IN__0  [RUN]
+[2025-05-01T07:54:13.821+0000] {subprocess.py:93} INFO - [0m07:54:13  4 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_PRECIP_IN__0  [[32mPASS[0m in 1.41s]
+[2025-05-01T07:54:13.822+0000] {subprocess.py:93} INFO - [0m07:54:13  5 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_UV__0  [RUN]
+[2025-05-01T07:54:14.489+0000] {subprocess.py:93} INFO - [0m07:54:14  5 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_UV__0  [[32mPASS[0m in 0.66s]
+[2025-05-01T07:54:14.491+0000] {subprocess.py:93} INFO - [0m07:54:14  6 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_WIND_MPH__0  [RUN]
+[2025-05-01T07:54:16.247+0000] {subprocess.py:93} INFO - [0m07:54:16  6 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_sj_weather_AVERAGE_WIND_MPH__0  [[32mPASS[0m in 1.75s]
+[2025-05-01T07:54:16.249+0000] {subprocess.py:93} INFO - [0m07:54:16  7 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_CLOUDINESS__0  [RUN]
+[2025-05-01T07:54:16.912+0000] {subprocess.py:93} INFO - [0m07:54:16  7 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_CLOUDINESS__0  [[32mPASS[0m in 0.66s]
+[2025-05-01T07:54:16.915+0000] {subprocess.py:93} INFO - [0m07:54:16  8 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_GUST_SPEED_KPH__0  [RUN]
+[2025-05-01T07:54:17.558+0000] {subprocess.py:93} INFO - [0m07:54:17  8 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_GUST_SPEED_KPH__0  [[32mPASS[0m in 0.64s]
+[2025-05-01T07:54:17.560+0000] {subprocess.py:93} INFO - [0m07:54:17  9 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_HUMIDITY__0  [RUN]
+[2025-05-01T07:54:18.234+0000] {subprocess.py:93} INFO - [0m07:54:18  9 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_HUMIDITY__0  [[32mPASS[0m in 0.67s]
+[2025-05-01T07:54:18.236+0000] {subprocess.py:93} INFO - [0m07:54:18  10 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_UV__0  [RUN]
+[2025-05-01T07:54:18.896+0000] {subprocess.py:93} INFO - [0m07:54:18  10 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_UV__0  [[32mPASS[0m in 0.66s]
+[2025-05-01T07:54:18.897+0000] {subprocess.py:93} INFO - [0m07:54:18  11 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_WIND_SPEED_MPH__0  [RUN]
+[2025-05-01T07:54:19.597+0000] {subprocess.py:93} INFO - [0m07:54:19  11 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_AVERAGE_WIND_SPEED_MPH__0  [[32mPASS[0m in 0.70s]
+[2025-05-01T07:54:19.599+0000] {subprocess.py:93} INFO - [0m07:54:19  12 of 60 START test dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_TOTAL_RAINFALL_INCHES__0  [RUN]
+[2025-05-01T07:54:20.837+0000] {subprocess.py:93} INFO - [0m07:54:20  12 of 60 PASS dbt_expectations_expect_column_values_to_be_between_average_zipcode_data_TOTAL_RAINFALL_INCHES__0  [[32mPASS[0m in 1.24s]
+[2025-05-01T07:54:20.839+0000] {subprocess.py:93} INFO - [0m07:54:20  13 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_CLOUDINESS__100__0  [RUN]
+[2025-05-01T07:54:21.500+0000] {subprocess.py:93} INFO - [0m07:54:21  13 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_CLOUDINESS__100__0  [[32mPASS[0m in 0.66s]
+[2025-05-01T07:54:21.502+0000] {subprocess.py:93} INFO - [0m07:54:21  14 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_HUMIDITY__0  [RUN]
+[2025-05-01T07:54:22.171+0000] {subprocess.py:93} INFO - [0m07:54:22  14 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_HUMIDITY__0  [[32mPASS[0m in 0.67s]
+[2025-05-01T07:54:22.174+0000] {subprocess.py:93} INFO - [0m07:54:22  15 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_PRECIP_IN__0  [RUN]
+[2025-05-01T07:54:22.858+0000] {subprocess.py:93} INFO - [0m07:54:22  15 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_PRECIP_IN__0  [[32mPASS[0m in 0.68s]
+[2025-05-01T07:54:22.861+0000] {subprocess.py:93} INFO - [0m07:54:22  16 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_UV__0  [RUN]
+[2025-05-01T07:54:23.538+0000] {subprocess.py:93} INFO - [0m07:54:23  16 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_UV__0  [[32mPASS[0m in 0.68s]
+[2025-05-01T07:54:23.541+0000] {subprocess.py:93} INFO - [0m07:54:23  17 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_WIND_MPH__0  [RUN]
+[2025-05-01T07:54:24.373+0000] {subprocess.py:93} INFO - [0m07:54:24  17 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_sj_weather_data_WIND_MPH__0  [[32mPASS[0m in 0.83s]
+[2025-05-01T07:54:24.376+0000] {subprocess.py:93} INFO - [0m07:54:24  18 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_CLOUDINESS__100__0  [RUN]
+[2025-05-01T07:54:25.873+0000] {subprocess.py:93} INFO - [0m07:54:25  18 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_CLOUDINESS__100__0  [[32mPASS[0m in 1.50s]
+[2025-05-01T07:54:25.875+0000] {subprocess.py:93} INFO - [0m07:54:25  19 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_GUST_KPH__0  [RUN]
+[2025-05-01T07:54:26.627+0000] {subprocess.py:93} INFO - [0m07:54:26  19 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_GUST_KPH__0  [[32mPASS[0m in 0.75s]
+[2025-05-01T07:54:26.628+0000] {subprocess.py:93} INFO - [0m07:54:26  20 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_HUMIDITY__0  [RUN]
+[2025-05-01T07:54:27.324+0000] {subprocess.py:93} INFO - [0m07:54:27  20 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_HUMIDITY__0  [[32mPASS[0m in 0.70s]
+[2025-05-01T07:54:27.325+0000] {subprocess.py:93} INFO - [0m07:54:27  21 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_PRECIP_IN__0  [RUN]
+[2025-05-01T07:54:28.028+0000] {subprocess.py:93} INFO - [0m07:54:28  21 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_PRECIP_IN__0  [[32mPASS[0m in 0.70s]
+[2025-05-01T07:54:28.029+0000] {subprocess.py:93} INFO - [0m07:54:28  22 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_UV__0  [RUN]
+[2025-05-01T07:54:29.002+0000] {subprocess.py:93} INFO - [0m07:54:29  22 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_UV__0  [[32mPASS[0m in 0.97s]
+[2025-05-01T07:54:29.004+0000] {subprocess.py:93} INFO - [0m07:54:29  23 of 60 START test dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_WIND_MPH__0  [RUN]
+[2025-05-01T07:54:29.792+0000] {subprocess.py:93} INFO - [0m07:54:29  23 of 60 PASS dbt_expectations_expect_column_values_to_be_between_raw_zipcode_weather_data_WIND_MPH__0  [[32mPASS[0m in 0.79s]
+[2025-05-01T07:54:29.795+0000] {subprocess.py:93} INFO - [0m07:54:29  24 of 60 START test not_null_average_sj_weather_AVERAGE_HUMIDITY ............... [RUN]
+[2025-05-01T07:54:30.599+0000] {subprocess.py:93} INFO - [0m07:54:30  24 of 60 PASS not_null_average_sj_weather_AVERAGE_HUMIDITY ..................... [[32mPASS[0m in 0.80s]
+[2025-05-01T07:54:30.602+0000] {subprocess.py:93} INFO - [0m07:54:30  25 of 60 START test not_null_average_sj_weather_AVERAGE_PRECIP_IN .............. [RUN]
+[2025-05-01T07:54:31.332+0000] {subprocess.py:93} INFO - [0m07:54:31  25 of 60 PASS not_null_average_sj_weather_AVERAGE_PRECIP_IN .................... [[32mPASS[0m in 0.73s]
+[2025-05-01T07:54:31.334+0000] {subprocess.py:93} INFO - [0m07:54:31  26 of 60 START test not_null_average_sj_weather_AVERAGE_TEMP ................... [RUN]
+[2025-05-01T07:54:32.602+0000] {subprocess.py:93} INFO - [0m07:54:32  26 of 60 PASS not_null_average_sj_weather_AVERAGE_TEMP ......................... [[32mPASS[0m in 1.27s]
+[2025-05-01T07:54:32.605+0000] {subprocess.py:93} INFO - [0m07:54:32  27 of 60 START test not_null_average_sj_weather_AVERAGE_UV ..................... [RUN]
+[2025-05-01T07:54:33.275+0000] {subprocess.py:93} INFO - [0m07:54:33  27 of 60 PASS not_null_average_sj_weather_AVERAGE_UV ........................... [[32mPASS[0m in 0.67s]
+[2025-05-01T07:54:33.278+0000] {subprocess.py:93} INFO - [0m07:54:33  28 of 60 START test not_null_average_sj_weather_AVERAGE_WIND_MPH ............... [RUN]
+[2025-05-01T07:54:34.326+0000] {subprocess.py:93} INFO - [0m07:54:34  28 of 60 PASS not_null_average_sj_weather_AVERAGE_WIND_MPH ..................... [[32mPASS[0m in 1.05s]
+[2025-05-01T07:54:34.331+0000] {subprocess.py:93} INFO - [0m07:54:34  29 of 60 START test not_null_average_zipcode_data_AVERAGE_CLOUDINESS ........... [RUN]
+[2025-05-01T07:54:35.830+0000] {subprocess.py:93} INFO - [0m07:54:35  29 of 60 PASS not_null_average_zipcode_data_AVERAGE_CLOUDINESS ................. [[32mPASS[0m in 1.50s]
+[2025-05-01T07:54:35.833+0000] {subprocess.py:93} INFO - [0m07:54:35  30 of 60 START test not_null_average_zipcode_data_AVERAGE_GUST_SPEED_KPH ....... [RUN]
+[2025-05-01T07:54:36.583+0000] {subprocess.py:93} INFO - [0m07:54:36  30 of 60 PASS not_null_average_zipcode_data_AVERAGE_GUST_SPEED_KPH ............. [[32mPASS[0m in 0.75s]
+[2025-05-01T07:54:36.585+0000] {subprocess.py:93} INFO - [0m07:54:36  31 of 60 START test not_null_average_zipcode_data_AVERAGE_HUMIDITY ............. [RUN]
+[2025-05-01T07:54:37.228+0000] {subprocess.py:93} INFO - [0m07:54:37  31 of 60 PASS not_null_average_zipcode_data_AVERAGE_HUMIDITY ................... [[32mPASS[0m in 0.64s]
+[2025-05-01T07:54:37.231+0000] {subprocess.py:93} INFO - [0m07:54:37  32 of 60 START test not_null_average_zipcode_data_AVERAGE_TEMPERATURE .......... [RUN]
+[2025-05-01T07:54:37.921+0000] {subprocess.py:93} INFO - [0m07:54:37  32 of 60 PASS not_null_average_zipcode_data_AVERAGE_TEMPERATURE ................ [[32mPASS[0m in 0.69s]
+[2025-05-01T07:54:37.923+0000] {subprocess.py:93} INFO - [0m07:54:37  33 of 60 START test not_null_average_zipcode_data_AVERAGE_UV ................... [RUN]
+[2025-05-01T07:54:38.681+0000] {subprocess.py:93} INFO - [0m07:54:38  33 of 60 PASS not_null_average_zipcode_data_AVERAGE_UV ......................... [[32mPASS[0m in 0.76s]
+[2025-05-01T07:54:38.684+0000] {subprocess.py:93} INFO - [0m07:54:38  34 of 60 START test not_null_average_zipcode_data_AVERAGE_WIND_SPEED_MPH ....... [RUN]
+[2025-05-01T07:54:39.357+0000] {subprocess.py:93} INFO - [0m07:54:39  34 of 60 PASS not_null_average_zipcode_data_AVERAGE_WIND_SPEED_MPH ............. [[32mPASS[0m in 0.67s]
+[2025-05-01T07:54:39.359+0000] {subprocess.py:93} INFO - [0m07:54:39  35 of 60 START test not_null_average_zipcode_data_EARLIEST_RECORD_DATE ......... [RUN]
+[2025-05-01T07:54:40.079+0000] {subprocess.py:93} INFO - [0m07:54:40  35 of 60 PASS not_null_average_zipcode_data_EARLIEST_RECORD_DATE ............... [[32mPASS[0m in 0.72s]
+[2025-05-01T07:54:40.082+0000] {subprocess.py:93} INFO - [0m07:54:40  36 of 60 START test not_null_average_zipcode_data_LATEST_RECORD_DATE ........... [RUN]
+[2025-05-01T07:54:41.105+0000] {subprocess.py:93} INFO - [0m07:54:41  36 of 60 PASS not_null_average_zipcode_data_LATEST_RECORD_DATE ................. [[32mPASS[0m in 1.02s]
+[2025-05-01T07:54:41.107+0000] {subprocess.py:93} INFO - [0m07:54:41  37 of 60 START test not_null_average_zipcode_data_REGION ....................... [RUN]
+[2025-05-01T07:54:41.784+0000] {subprocess.py:93} INFO - [0m07:54:41  37 of 60 PASS not_null_average_zipcode_data_REGION ............................. [[32mPASS[0m in 0.68s]
+[2025-05-01T07:54:41.786+0000] {subprocess.py:93} INFO - [0m07:54:41  38 of 60 START test not_null_average_zipcode_data_TOTAL_RAINFALL_INCHES ........ [RUN]
+[2025-05-01T07:54:42.487+0000] {subprocess.py:93} INFO - [0m07:54:42  38 of 60 PASS not_null_average_zipcode_data_TOTAL_RAINFALL_INCHES .............. [[32mPASS[0m in 0.70s]
+[2025-05-01T07:54:42.489+0000] {subprocess.py:93} INFO - [0m07:54:42  39 of 60 START test not_null_filtered_zipcode_data_REGION ...................... [RUN]
+[2025-05-01T07:54:43.632+0000] {subprocess.py:93} INFO - [0m07:54:43  39 of 60 PASS not_null_filtered_zipcode_data_REGION ............................ [[32mPASS[0m in 1.14s]
+[2025-05-01T07:54:43.635+0000] {subprocess.py:93} INFO - [0m07:54:43  40 of 60 START test not_null_raw_sj_weather_data_CLOUDINESS .................... [RUN]
+[2025-05-01T07:54:44.402+0000] {subprocess.py:93} INFO - [0m07:54:44  40 of 60 PASS not_null_raw_sj_weather_data_CLOUDINESS .......................... [[32mPASS[0m in 0.77s]
+[2025-05-01T07:54:44.405+0000] {subprocess.py:93} INFO - [0m07:54:44  41 of 60 START test not_null_raw_sj_weather_data_HUMIDITY ...................... [RUN]
+[2025-05-01T07:54:45.414+0000] {subprocess.py:93} INFO - [0m07:54:45  41 of 60 PASS not_null_raw_sj_weather_data_HUMIDITY ............................ [[32mPASS[0m in 1.01s]
+[2025-05-01T07:54:45.416+0000] {subprocess.py:93} INFO - [0m07:54:45  42 of 60 START test not_null_raw_sj_weather_data_PRECIP_IN ..................... [RUN]
+[2025-05-01T07:54:46.125+0000] {subprocess.py:93} INFO - [0m07:54:46  42 of 60 PASS not_null_raw_sj_weather_data_PRECIP_IN ........................... [[32mPASS[0m in 0.71s]
+[2025-05-01T07:54:46.127+0000] {subprocess.py:93} INFO - [0m07:54:46  43 of 60 START test not_null_raw_sj_weather_data_TEMP_F ........................ [RUN]
+[2025-05-01T07:54:46.936+0000] {subprocess.py:93} INFO - [0m07:54:46  43 of 60 PASS not_null_raw_sj_weather_data_TEMP_F .............................. [[32mPASS[0m in 0.81s]
+[2025-05-01T07:54:46.938+0000] {subprocess.py:93} INFO - [0m07:54:46  44 of 60 START test not_null_raw_sj_weather_data_UV ............................ [RUN]
+[2025-05-01T07:54:47.698+0000] {subprocess.py:93} INFO - [0m07:54:47  44 of 60 PASS not_null_raw_sj_weather_data_UV .................................. [[32mPASS[0m in 0.76s]
+[2025-05-01T07:54:47.700+0000] {subprocess.py:93} INFO - [0m07:54:47  45 of 60 START test not_null_raw_sj_weather_data_WIND_MPH ...................... [RUN]
+[2025-05-01T07:54:49.301+0000] {subprocess.py:93} INFO - [0m07:54:49  45 of 60 PASS not_null_raw_sj_weather_data_WIND_MPH ............................ [[32mPASS[0m in 1.60s]
+[2025-05-01T07:54:49.304+0000] {subprocess.py:93} INFO - [0m07:54:49  46 of 60 START test not_null_raw_sj_weather_data__localtime_ ................... [RUN]
+[2025-05-01T07:54:50.280+0000] {subprocess.py:93} INFO - [0m07:54:50  46 of 60 PASS not_null_raw_sj_weather_data__localtime_ ......................... [[32mPASS[0m in 0.97s]
+[2025-05-01T07:54:50.282+0000] {subprocess.py:93} INFO - [0m07:54:50  47 of 60 START test not_null_raw_zipcode_weather_data_CLOUDINESS ............... [RUN]
+[2025-05-01T07:54:51.504+0000] {subprocess.py:93} INFO - [0m07:54:51  47 of 60 PASS not_null_raw_zipcode_weather_data_CLOUDINESS ..................... [[32mPASS[0m in 1.22s]
+[2025-05-01T07:54:51.506+0000] {subprocess.py:93} INFO - [0m07:54:51  48 of 60 START test not_null_raw_zipcode_weather_data_CONDITION ................ [RUN]
+[2025-05-01T07:54:52.530+0000] {subprocess.py:93} INFO - [0m07:54:52  48 of 60 PASS not_null_raw_zipcode_weather_data_CONDITION ...................... [[32mPASS[0m in 1.02s]
+[2025-05-01T07:54:52.535+0000] {subprocess.py:93} INFO - [0m07:54:52  49 of 60 START test not_null_raw_zipcode_weather_data_GUST_KPH ................. [RUN]
+[2025-05-01T07:54:53.526+0000] {subprocess.py:93} INFO - [0m07:54:53  49 of 60 PASS not_null_raw_zipcode_weather_data_GUST_KPH ....................... [[32mPASS[0m in 0.99s]
+[2025-05-01T07:54:53.530+0000] {subprocess.py:93} INFO - [0m07:54:53  50 of 60 START test not_null_raw_zipcode_weather_data_HUMIDITY ................. [RUN]
+[2025-05-01T07:54:54.226+0000] {subprocess.py:93} INFO - [0m07:54:54  50 of 60 PASS not_null_raw_zipcode_weather_data_HUMIDITY ....................... [[32mPASS[0m in 0.69s]
+[2025-05-01T07:54:54.229+0000] {subprocess.py:93} INFO - [0m07:54:54  51 of 60 START test not_null_raw_zipcode_weather_data_LAT ...................... [RUN]
+[2025-05-01T07:54:55.283+0000] {subprocess.py:93} INFO - [0m07:54:55  51 of 60 PASS not_null_raw_zipcode_weather_data_LAT ............................ [[32mPASS[0m in 1.05s]
+[2025-05-01T07:54:55.285+0000] {subprocess.py:93} INFO - [0m07:54:55  52 of 60 START test not_null_raw_zipcode_weather_data_LOCATION_NAME ............ [RUN]
+[2025-05-01T07:54:56.887+0000] {subprocess.py:93} INFO - [0m07:54:56  52 of 60 PASS not_null_raw_zipcode_weather_data_LOCATION_NAME .................. [[32mPASS[0m in 1.60s]
+[2025-05-01T07:54:56.892+0000] {subprocess.py:93} INFO - [0m07:54:56  53 of 60 START test not_null_raw_zipcode_weather_data_LON ...................... [RUN]
+[2025-05-01T07:54:57.602+0000] {subprocess.py:93} INFO - [0m07:54:57  53 of 60 PASS not_null_raw_zipcode_weather_data_LON ............................ [[32mPASS[0m in 0.71s]
+[2025-05-01T07:54:57.604+0000] {subprocess.py:93} INFO - [0m07:54:57  54 of 60 START test not_null_raw_zipcode_weather_data_PRECIP_IN ................ [RUN]
+[2025-05-01T07:54:58.710+0000] {subprocess.py:93} INFO - [0m07:54:58  54 of 60 PASS not_null_raw_zipcode_weather_data_PRECIP_IN ...................... [[32mPASS[0m in 1.10s]
+[2025-05-01T07:54:58.712+0000] {subprocess.py:93} INFO - [0m07:54:58  55 of 60 START test not_null_raw_zipcode_weather_data_TEMP_F ................... [RUN]
+[2025-05-01T07:54:59.460+0000] {subprocess.py:93} INFO - [0m07:54:59  55 of 60 PASS not_null_raw_zipcode_weather_data_TEMP_F ......................... [[32mPASS[0m in 0.75s]
+[2025-05-01T07:54:59.463+0000] {subprocess.py:93} INFO - [0m07:54:59  56 of 60 START test not_null_raw_zipcode_weather_data_UV ....................... [RUN]
+[2025-05-01T07:55:00.169+0000] {subprocess.py:93} INFO - [0m07:55:00  56 of 60 PASS not_null_raw_zipcode_weather_data_UV ............................. [[32mPASS[0m in 0.70s]
+[2025-05-01T07:55:00.172+0000] {subprocess.py:93} INFO - [0m07:55:00  57 of 60 START test not_null_raw_zipcode_weather_data_WIND_DIR ................. [RUN]
+[2025-05-01T07:55:00.925+0000] {subprocess.py:93} INFO - [0m07:55:00  57 of 60 PASS not_null_raw_zipcode_weather_data_WIND_DIR ....................... [[32mPASS[0m in 0.75s]
+[2025-05-01T07:55:00.927+0000] {subprocess.py:93} INFO - [0m07:55:00  58 of 60 START test not_null_raw_zipcode_weather_data_WIND_MPH ................. [RUN]
+[2025-05-01T07:55:02.089+0000] {subprocess.py:93} INFO - [0m07:55:02  58 of 60 PASS not_null_raw_zipcode_weather_data_WIND_MPH ....................... [[32mPASS[0m in 1.16s]
+[2025-05-01T07:55:02.092+0000] {subprocess.py:93} INFO - [0m07:55:02  59 of 60 START test not_null_raw_zipcode_weather_data_localtime ................ [RUN]
+[2025-05-01T07:55:03.646+0000] {subprocess.py:93} INFO - [0m07:55:03  59 of 60 PASS not_null_raw_zipcode_weather_data_localtime ...................... [[32mPASS[0m in 1.55s]
+[2025-05-01T07:55:03.647+0000] {subprocess.py:93} INFO - [0m07:55:03  60 of 60 START test unique_raw_sj_weather_data__localtime_ ..................... [RUN]
+[2025-05-01T07:55:04.413+0000] {subprocess.py:93} INFO - [0m07:55:04  60 of 60 PASS unique_raw_sj_weather_data__localtime_ ........................... [[32mPASS[0m in 0.77s]
+[2025-05-01T07:55:04.415+0000] {subprocess.py:93} INFO - [0m07:55:04
+[2025-05-01T07:55:04.416+0000] {subprocess.py:93} INFO - [0m07:55:04  Finished running 60 data tests in 0 hours 0 minutes and 58.18 seconds (58.18s).
+[2025-05-01T07:55:04.458+0000] {subprocess.py:93} INFO - [0m07:55:04
+[2025-05-01T07:55:04.459+0000] {subprocess.py:93} INFO - [0m07:55:04  [32mCompleted successfully[0m
+[2025-05-01T07:55:04.459+0000] {subprocess.py:93} INFO - [0m07:55:04
+[2025-05-01T07:55:04.459+0000] {subprocess.py:93} INFO - [0m07:55:04  Done. PASS=60 WARN=0 ERROR=0 SKIP=0 TOTAL=60
+[2025-05-01T07:55:05.272+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T07:55:05.294+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:55:05.294+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_test, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T075404, end_date=20250501T075505
+[2025-05-01T07:55:05.329+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:55:05.340+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:55:05.341+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:56:05.135+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:56:05.140+0000] {taskinstance.py:2602} INFO - Dependencies not met for <TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [upstream_failed]>, dependency 'Task Instance State' FAILED: Task is in the 'upstream_failed' state.
+[2025-05-01T07:56:05.142+0000] {taskinstance.py:2602} INFO - Dependencies not met for <TaskInstance: BuildELT_dbt.dbt_test manual__2025-04-30T00:00:00+00:00 [upstream_failed]>, dependency 'Trigger Rule' FAILED: Task's trigger rule 'all_success' requires all upstream tasks to have succeeded, but found 1 non-success(es). upstream_states=_UpstreamTIStates(success=0, skipped=0, failed=1, upstream_failed=0, removed=0, done=1, success_setup=0, skipped_setup=0), upstream_task_ids={'dbt_run'}
+[2025-05-01T07:56:05.143+0000] {local_task_job_runner.py:166} INFO - Task is not able to be run

@@ -1,0 +1,412 @@
+[2025-05-01T07:29:35.920+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:29:35.928+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:29:35.932+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:29:35.932+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:29:35.937+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:29:35.941+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_run', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpacaa1pqc']
+[2025-05-01T07:29:35.943+0000] {standard_task_runner.py:105} INFO - Job 110: Subtask dbt_run
+[2025-05-01T07:29:35.942+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1524) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:29:35.944+0000] {standard_task_runner.py:72} INFO - Started process 1526 to run task
+[2025-05-01T07:29:35.984+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:29:36.052+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:29:36.052+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:29:36.062+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:29:36.062+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt run --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:29:36.066+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:29:36.998+0000] {subprocess.py:93} INFO - [0m07:29:36  Running with dbt=1.9.0-b4
+[2025-05-01T07:29:37.488+0000] {subprocess.py:93} INFO - [0m07:29:37  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:29:37.528+0000] {subprocess.py:93} INFO - [0m07:29:37  Encountered an error:
+[2025-05-01T07:29:37.528+0000] {subprocess.py:93} INFO - Compilation Error
+[2025-05-01T07:29:37.528+0000] {subprocess.py:93} INFO -   dbt found 1 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+[2025-05-01T07:29:38.197+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-05-01T07:29:38.210+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:29:38.235+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:29:38.249+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:29:38.250+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:32:49.557+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:32:49.568+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:32:49.572+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:32:49.572+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:32:49.577+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:32:49.581+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_run', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpgm0wcioc']
+[2025-05-01T07:32:49.583+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1696) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:32:49.583+0000] {standard_task_runner.py:105} INFO - Job 111: Subtask dbt_run
+[2025-05-01T07:32:49.583+0000] {standard_task_runner.py:72} INFO - Started process 1697 to run task
+[2025-05-01T07:32:49.606+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:32:49.636+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:32:49.637+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:32:49.645+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:32:49.646+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt run --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:32:49.652+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:32:50.586+0000] {subprocess.py:93} INFO - [0m07:32:50  Running with dbt=1.9.0-b4
+[2025-05-01T07:32:51.012+0000] {subprocess.py:93} INFO - [0m07:32:51  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:32:51.094+0000] {subprocess.py:93} INFO - [0m07:32:51  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[2025-05-01T07:32:52.069+0000] {subprocess.py:93} INFO - [0m07:32:52  Found 6 models, 2 snapshots, 60 data tests, 2 sources, 725 macros
+[2025-05-01T07:32:52.071+0000] {subprocess.py:93} INFO - [0m07:32:52
+[2025-05-01T07:32:52.071+0000] {subprocess.py:93} INFO - [0m07:32:52  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:32:52.071+0000] {subprocess.py:93} INFO - [0m07:32:52
+[2025-05-01T07:32:57.689+0000] {subprocess.py:93} INFO - [0m07:32:57  1 of 4 START sql table model analytics.average_sj_weather ...................... [RUN]
+[2025-05-01T07:32:59.197+0000] {subprocess.py:93} INFO - [0m07:32:59  1 of 4 OK created sql table model analytics.average_sj_weather ................. [[32mSUCCESS 1[0m in 1.50s]
+[2025-05-01T07:32:59.199+0000] {subprocess.py:93} INFO - [0m07:32:59  2 of 4 START sql table model analytics.filtered_sj_weather ..................... [RUN]
+[2025-05-01T07:33:01.286+0000] {subprocess.py:93} INFO - [0m07:33:01  2 of 4 OK created sql table model analytics.filtered_sj_weather ................ [[32mSUCCESS 1[0m in 2.08s]
+[2025-05-01T07:33:01.289+0000] {subprocess.py:93} INFO - [0m07:33:01  3 of 4 START sql table model analytics.average_zipcode_data .................... [RUN]
+[2025-05-01T07:33:02.828+0000] {subprocess.py:93} INFO - [0m07:33:02  3 of 4 OK created sql table model analytics.average_zipcode_data ............... [[32mSUCCESS 1[0m in 1.53s]
+[2025-05-01T07:33:02.831+0000] {subprocess.py:93} INFO - [0m07:33:02  4 of 4 START sql table model analytics.filtered_zipcode_data ................... [RUN]
+[2025-05-01T07:33:04.411+0000] {subprocess.py:93} INFO - [0m07:33:04  4 of 4 OK created sql table model analytics.filtered_zipcode_data .............. [[32mSUCCESS 1[0m in 1.58s]
+[2025-05-01T07:33:04.413+0000] {subprocess.py:93} INFO - [0m07:33:04
+[2025-05-01T07:33:04.414+0000] {subprocess.py:93} INFO - [0m07:33:04  Finished running 4 table models in 0 hours 0 minutes and 12.34 seconds (12.34s).
+[2025-05-01T07:33:04.456+0000] {subprocess.py:93} INFO - [0m07:33:04
+[2025-05-01T07:33:04.456+0000] {subprocess.py:93} INFO - [0m07:33:04  [32mCompleted successfully[0m
+[2025-05-01T07:33:04.458+0000] {subprocess.py:93} INFO - [0m07:33:04
+[2025-05-01T07:33:04.458+0000] {subprocess.py:93} INFO - [0m07:33:04  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2025-05-01T07:33:05.108+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T07:33:05.126+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:33:05.126+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_run, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T073249, end_date=20250501T073305
+[2025-05-01T07:33:05.161+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:33:05.171+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:33:05.171+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:34:58.056+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:34:58.064+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:34:58.068+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:34:58.068+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:34:58.073+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:34:58.080+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1919) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:34:58.076+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_run', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpxn53tl70']
+[2025-05-01T07:34:58.081+0000] {standard_task_runner.py:72} INFO - Started process 1920 to run task
+[2025-05-01T07:34:58.081+0000] {standard_task_runner.py:105} INFO - Job 114: Subtask dbt_run
+[2025-05-01T07:34:58.106+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:34:58.136+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:34:58.137+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:34:58.145+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:34:58.146+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt run --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:34:58.150+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:34:59.140+0000] {subprocess.py:93} INFO - [0m07:34:59  Running with dbt=1.9.0-b4
+[2025-05-01T07:34:59.592+0000] {subprocess.py:93} INFO - [0m07:34:59  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:34:59.850+0000] {subprocess.py:93} INFO - [0m07:34:59  Found 6 models, 2 snapshots, 60 data tests, 2 sources, 725 macros
+[2025-05-01T07:34:59.852+0000] {subprocess.py:93} INFO - [0m07:34:59
+[2025-05-01T07:34:59.852+0000] {subprocess.py:93} INFO - [0m07:34:59  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:34:59.852+0000] {subprocess.py:93} INFO - [0m07:34:59
+[2025-05-01T07:35:03.701+0000] {subprocess.py:93} INFO - [0m07:35:03  1 of 4 START sql table model analytics.average_sj_weather ...................... [RUN]
+[2025-05-01T07:35:05.690+0000] {subprocess.py:93} INFO - [0m07:35:05  1 of 4 OK created sql table model analytics.average_sj_weather ................. [[32mSUCCESS 1[0m in 1.98s]
+[2025-05-01T07:35:05.696+0000] {subprocess.py:93} INFO - [0m07:35:05  2 of 4 START sql table model analytics.filtered_sj_weather ..................... [RUN]
+[2025-05-01T07:35:07.716+0000] {subprocess.py:93} INFO - [0m07:35:07  2 of 4 OK created sql table model analytics.filtered_sj_weather ................ [[32mSUCCESS 1[0m in 2.02s]
+[2025-05-01T07:35:07.720+0000] {subprocess.py:93} INFO - [0m07:35:07  3 of 4 START sql table model analytics.average_zipcode_data .................... [RUN]
+[2025-05-01T07:35:10.152+0000] {subprocess.py:93} INFO - [0m07:35:10  3 of 4 OK created sql table model analytics.average_zipcode_data ............... [[32mSUCCESS 1[0m in 2.43s]
+[2025-05-01T07:35:10.157+0000] {subprocess.py:93} INFO - [0m07:35:10  4 of 4 START sql table model analytics.filtered_zipcode_data ................... [RUN]
+[2025-05-01T07:35:12.524+0000] {subprocess.py:93} INFO - [0m07:35:12  4 of 4 OK created sql table model analytics.filtered_zipcode_data .............. [[32mSUCCESS 1[0m in 2.36s]
+[2025-05-01T07:35:12.526+0000] {subprocess.py:93} INFO - [0m07:35:12
+[2025-05-01T07:35:12.526+0000] {subprocess.py:93} INFO - [0m07:35:12  Finished running 4 table models in 0 hours 0 minutes and 12.67 seconds (12.67s).
+[2025-05-01T07:35:12.639+0000] {subprocess.py:93} INFO - [0m07:35:12
+[2025-05-01T07:35:12.639+0000] {subprocess.py:93} INFO - [0m07:35:12  [32mCompleted successfully[0m
+[2025-05-01T07:35:12.639+0000] {subprocess.py:93} INFO - [0m07:35:12
+[2025-05-01T07:35:12.640+0000] {subprocess.py:93} INFO - [0m07:35:12  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2025-05-01T07:35:13.312+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T07:35:13.332+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:35:13.333+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_run, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T073458, end_date=20250501T073513
+[2025-05-01T07:35:13.361+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:35:13.371+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:35:13.372+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:53:52.444+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:53:52.458+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:53:52.462+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:53:52.462+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:53:52.468+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:53:52.473+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=3099) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:53:52.472+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_run', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '123', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpi8jjmotg']
+[2025-05-01T07:53:52.474+0000] {standard_task_runner.py:105} INFO - Job 123: Subtask dbt_run
+[2025-05-01T07:53:52.474+0000] {standard_task_runner.py:72} INFO - Started process 3108 to run task
+[2025-05-01T07:53:52.498+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:53:52.529+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:53:52.529+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:53:52.538+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:53:52.539+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt run --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:53:52.543+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:53:53.443+0000] {subprocess.py:93} INFO - [0m07:53:53  Running with dbt=1.9.0-b4
+[2025-05-01T07:53:53.865+0000] {subprocess.py:93} INFO - [0m07:53:53  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:53:54.114+0000] {subprocess.py:93} INFO - [0m07:53:54  Found 6 models, 60 data tests, 2 snapshots, 2 sources, 725 macros
+[2025-05-01T07:53:54.116+0000] {subprocess.py:93} INFO - [0m07:53:54
+[2025-05-01T07:53:54.116+0000] {subprocess.py:93} INFO - [0m07:53:54  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:53:54.116+0000] {subprocess.py:93} INFO - [0m07:53:54
+[2025-05-01T07:53:57.244+0000] {subprocess.py:93} INFO - [0m07:53:57  1 of 4 START sql table model analytics.average_sj_weather ...................... [RUN]
+[2025-05-01T07:53:59.639+0000] {subprocess.py:93} INFO - [0m07:53:59  1 of 4 OK created sql table model analytics.average_sj_weather ................. [[32mSUCCESS 1[0m in 2.39s]
+[2025-05-01T07:53:59.643+0000] {subprocess.py:93} INFO - [0m07:53:59  2 of 4 START sql table model analytics.filtered_sj_weather ..................... [RUN]
+[2025-05-01T07:54:00.918+0000] {subprocess.py:93} INFO - [0m07:54:00  2 of 4 OK created sql table model analytics.filtered_sj_weather ................ [[32mSUCCESS 1[0m in 1.27s]
+[2025-05-01T07:54:00.921+0000] {subprocess.py:93} INFO - [0m07:54:00  3 of 4 START sql table model analytics.average_zipcode_data .................... [RUN]
+[2025-05-01T07:54:02.268+0000] {subprocess.py:93} INFO - [0m07:54:02  3 of 4 OK created sql table model analytics.average_zipcode_data ............... [[32mSUCCESS 1[0m in 1.34s]
+[2025-05-01T07:54:02.271+0000] {subprocess.py:93} INFO - [0m07:54:02  4 of 4 START sql table model analytics.filtered_zipcode_data ................... [RUN]
+[2025-05-01T07:54:04.126+0000] {subprocess.py:93} INFO - [0m07:54:04  4 of 4 OK created sql table model analytics.filtered_zipcode_data .............. [[32mSUCCESS 1[0m in 1.85s]
+[2025-05-01T07:54:04.128+0000] {subprocess.py:93} INFO - [0m07:54:04
+[2025-05-01T07:54:04.128+0000] {subprocess.py:93} INFO - [0m07:54:04  Finished running 4 table models in 0 hours 0 minutes and 10.01 seconds (10.01s).
+[2025-05-01T07:54:04.205+0000] {subprocess.py:93} INFO - [0m07:54:04
+[2025-05-01T07:54:04.206+0000] {subprocess.py:93} INFO - [0m07:54:04  [32mCompleted successfully[0m
+[2025-05-01T07:54:04.206+0000] {subprocess.py:93} INFO - [0m07:54:04
+[2025-05-01T07:54:04.206+0000] {subprocess.py:93} INFO - [0m07:54:04  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2025-05-01T07:54:04.822+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T07:54:04.840+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:54:04.840+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_run, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T075352, end_date=20250501T075404
+[2025-05-01T07:54:04.859+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:54:04.872+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:54:04.873+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:55:51.464+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:55:51.473+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:55:51.477+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:55:51.477+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:55:51.482+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:55:51.486+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_run', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '126', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmp_twwpz73']
+[2025-05-01T07:55:51.491+0000] {standard_task_runner.py:105} INFO - Job 126: Subtask dbt_run
+[2025-05-01T07:55:51.491+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=3302) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:55:51.492+0000] {standard_task_runner.py:72} INFO - Started process 3303 to run task
+[2025-05-01T07:55:51.515+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:55:51.546+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:55:51.546+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:55:51.555+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:55:51.555+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt run --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:55:51.559+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:55:52.513+0000] {subprocess.py:93} INFO - [0m07:55:52  Running with dbt=1.9.0-b4
+[2025-05-01T07:55:52.952+0000] {subprocess.py:93} INFO - [0m07:55:52  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:55:53.204+0000] {subprocess.py:93} INFO - [0m07:55:53  Found 6 models, 60 data tests, 2 snapshots, 2 sources, 725 macros
+[2025-05-01T07:55:53.206+0000] {subprocess.py:93} INFO - [0m07:55:53
+[2025-05-01T07:55:53.206+0000] {subprocess.py:93} INFO - [0m07:55:53  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:55:53.206+0000] {subprocess.py:93} INFO - [0m07:55:53
+[2025-05-01T07:55:56.315+0000] {subprocess.py:93} INFO - [0m07:55:56  1 of 4 START sql table model analytics.average_sj_weather ...................... [RUN]
+[2025-05-01T07:55:58.323+0000] {subprocess.py:93} INFO - [0m07:55:58  1 of 4 OK created sql table model analytics.average_sj_weather ................. [[32mSUCCESS 1[0m in 2.00s]
+[2025-05-01T07:55:58.326+0000] {subprocess.py:93} INFO - [0m07:55:58  2 of 4 START sql table model analytics.filtered_sj_weather ..................... [RUN]
+[2025-05-01T07:55:59.740+0000] {subprocess.py:93} INFO - [0m07:55:59  2 of 4 OK created sql table model analytics.filtered_sj_weather ................ [[32mSUCCESS 1[0m in 1.41s]
+[2025-05-01T07:55:59.744+0000] {subprocess.py:93} INFO - [0m07:55:59  3 of 4 START sql table model analytics.average_zipcode_data .................... [RUN]
+[2025-05-01T07:56:02.133+0000] {subprocess.py:93} INFO - [0m07:56:02  3 of 4 OK created sql table model analytics.average_zipcode_data ............... [[32mSUCCESS 1[0m in 2.39s]
+[2025-05-01T07:56:02.135+0000] {subprocess.py:93} INFO - [0m07:56:02  4 of 4 START sql table model analytics.filtered_zipcode_data ................... [RUN]
+[2025-05-01T07:56:04.123+0000] {subprocess.py:93} INFO - [0m07:56:04  4 of 4 OK created sql table model analytics.filtered_zipcode_data .............. [[32mSUCCESS 1[0m in 1.99s]
+[2025-05-01T07:56:04.126+0000] {subprocess.py:93} INFO - [0m07:56:04
+[2025-05-01T07:56:04.126+0000] {subprocess.py:93} INFO - [0m07:56:04  Finished running 4 table models in 0 hours 0 minutes and 10.92 seconds (10.92s).
+[2025-05-01T07:56:04.225+0000] {subprocess.py:93} INFO - [0m07:56:04
+[2025-05-01T07:56:04.226+0000] {subprocess.py:93} INFO - [0m07:56:04  [32mCompleted successfully[0m
+[2025-05-01T07:56:04.226+0000] {subprocess.py:93} INFO - [0m07:56:04
+[2025-05-01T07:56:04.226+0000] {subprocess.py:93} INFO - [0m07:56:04  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2025-05-01T07:56:04.936+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T07:56:04.970+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "xcom_pkey"
+DETAIL:  Key (dag_run_id, task_id, map_index, key)=(61, dbt_run, -1, return_value) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 789, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session_or_null)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3638, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 139, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 278, in set
+    session.flush()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3449, in flush
+    self._flush(objects)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3588, in _flush
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3549, in _flush
+    flush_context.execute()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+    c = connection._execute_20(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "xcom_pkey"
+DETAIL:  Key (dag_run_id, task_id, map_index, key)=(61, dbt_run, -1, return_value) already exists.
+
+[SQL: INSERT INTO xcom (dag_run_id, task_id, map_index, key, dag_id, run_id, value, timestamp) VALUES (%(dag_run_id)s, %(task_id)s, %(map_index)s, %(key)s, %(dag_id)s, %(run_id)s, %(value)s, %(timestamp)s)]
+[parameters: {'dag_run_id': 61, 'task_id': 'dbt_run', 'map_index': -1, 'key': 'return_value', 'dag_id': 'BuildELT_dbt', 'run_id': 'manual__2025-04-30T00:00:00+00:00', 'value': <psycopg2.extensions.Binary object at 0xffff97ec4e10>, 'timestamp': datetime.datetime(2025, 5, 1, 7, 56, 4, 965219, tzinfo=Timezone('UTC'))}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2025-05-01T07:56:04.982+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=BuildELT_dbt, task_id=dbt_run, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T075551, end_date=20250501T075604
+[2025-05-01T07:56:04.990+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:56:04.991+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 126 for task dbt_run ((psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "xcom_pkey"
+DETAIL:  Key (dag_run_id, task_id, map_index, key)=(61, dbt_run, -1, return_value) already exists.
+
+[SQL: INSERT INTO xcom (dag_run_id, task_id, map_index, key, dag_id, run_id, value, timestamp) VALUES (%(dag_run_id)s, %(task_id)s, %(map_index)s, %(key)s, %(dag_id)s, %(run_id)s, %(value)s, %(timestamp)s)]
+[parameters: {'dag_run_id': 61, 'task_id': 'dbt_run', 'map_index': -1, 'key': 'return_value', 'dag_id': 'BuildELT_dbt', 'run_id': 'manual__2025-04-30T00:00:00+00:00', 'value': <psycopg2.extensions.Binary object at 0xffff97ec4e10>, 'timestamp': datetime.datetime(2025, 5, 1, 7, 56, 4, 965219, tzinfo=Timezone('UTC'))}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 3303)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "xcom_pkey"
+DETAIL:  Key (dag_run_id, task_id, map_index, key)=(61, dbt_run, -1, return_value) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 789, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session_or_null)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3638, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 139, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 278, in set
+    session.flush()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3449, in flush
+    self._flush(objects)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3588, in _flush
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3549, in _flush
+    flush_context.execute()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+    c = connection._execute_20(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "xcom_pkey"
+DETAIL:  Key (dag_run_id, task_id, map_index, key)=(61, dbt_run, -1, return_value) already exists.
+
+[SQL: INSERT INTO xcom (dag_run_id, task_id, map_index, key, dag_id, run_id, value, timestamp) VALUES (%(dag_run_id)s, %(task_id)s, %(map_index)s, %(key)s, %(dag_id)s, %(run_id)s, %(value)s, %(timestamp)s)]
+[parameters: {'dag_run_id': 61, 'task_id': 'dbt_run', 'map_index': -1, 'key': 'return_value', 'dag_id': 'BuildELT_dbt', 'run_id': 'manual__2025-04-30T00:00:00+00:00', 'value': <psycopg2.extensions.Binary object at 0xffff97ec4e10>, 'timestamp': datetime.datetime(2025, 5, 1, 7, 56, 4, 965219, tzinfo=Timezone('UTC'))}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2025-05-01T07:56:05.047+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-05-01T07:56:05.067+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:56:05.071+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T08:15:09.491+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T08:15:09.499+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T08:15:09.503+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T08:15:09.503+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T08:15:09.509+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-30 00:00:00+00:00
+[2025-05-01T08:15:09.516+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_run', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '135', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpwp4gcexa']
+[2025-05-01T08:15:09.518+0000] {standard_task_runner.py:105} INFO - Job 135: Subtask dbt_run
+[2025-05-01T08:15:09.519+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=4363) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T08:15:09.520+0000] {standard_task_runner.py:72} INFO - Started process 4364 to run task
+[2025-05-01T08:15:09.543+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_run manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T08:15:09.576+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T08:15:09.577+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T08:15:09.586+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T08:15:09.586+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt run --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T08:15:09.590+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T08:15:10.524+0000] {subprocess.py:93} INFO - [0m08:15:10  Running with dbt=1.9.0-b4
+[2025-05-01T08:15:10.960+0000] {subprocess.py:93} INFO - [0m08:15:10  Registered adapter: snowflake=1.8.0
+[2025-05-01T08:15:11.196+0000] {subprocess.py:93} INFO - [0m08:15:11  Found 6 models, 60 data tests, 2 snapshots, 2 sources, 725 macros
+[2025-05-01T08:15:11.197+0000] {subprocess.py:93} INFO - [0m08:15:11
+[2025-05-01T08:15:11.198+0000] {subprocess.py:93} INFO - [0m08:15:11  Concurrency: 1 threads (target='dev')
+[2025-05-01T08:15:11.198+0000] {subprocess.py:93} INFO - [0m08:15:11
+[2025-05-01T08:15:16.213+0000] {subprocess.py:93} INFO - [0m08:15:16  1 of 4 START sql table model analytics.average_sj_weather ...................... [RUN]
+[2025-05-01T08:15:17.749+0000] {subprocess.py:93} INFO - [0m08:15:17  1 of 4 OK created sql table model analytics.average_sj_weather ................. [[32mSUCCESS 1[0m in 1.53s]
+[2025-05-01T08:15:17.751+0000] {subprocess.py:93} INFO - [0m08:15:17  2 of 4 START sql table model analytics.filtered_sj_weather ..................... [RUN]
+[2025-05-01T08:15:19.614+0000] {subprocess.py:93} INFO - [0m08:15:19  2 of 4 OK created sql table model analytics.filtered_sj_weather ................ [[32mSUCCESS 1[0m in 1.86s]
+[2025-05-01T08:15:19.616+0000] {subprocess.py:93} INFO - [0m08:15:19  3 of 4 START sql table model analytics.average_zipcode_data .................... [RUN]
+[2025-05-01T08:15:22.073+0000] {subprocess.py:93} INFO - [0m08:15:22  3 of 4 OK created sql table model analytics.average_zipcode_data ............... [[32mSUCCESS 1[0m in 2.45s]
+[2025-05-01T08:15:22.077+0000] {subprocess.py:93} INFO - [0m08:15:22  4 of 4 START sql table model analytics.filtered_zipcode_data ................... [RUN]
+[2025-05-01T08:15:23.674+0000] {subprocess.py:93} INFO - [0m08:15:23  4 of 4 OK created sql table model analytics.filtered_zipcode_data .............. [[32mSUCCESS 1[0m in 1.59s]
+[2025-05-01T08:15:23.680+0000] {subprocess.py:93} INFO - [0m08:15:23
+[2025-05-01T08:15:23.680+0000] {subprocess.py:93} INFO - [0m08:15:23  Finished running 4 table models in 0 hours 0 minutes and 12.48 seconds (12.48s).
+[2025-05-01T08:15:23.830+0000] {subprocess.py:93} INFO - [0m08:15:23
+[2025-05-01T08:15:23.831+0000] {subprocess.py:93} INFO - [0m08:15:23  [32mCompleted successfully[0m
+[2025-05-01T08:15:23.831+0000] {subprocess.py:93} INFO - [0m08:15:23
+[2025-05-01T08:15:23.831+0000] {subprocess.py:93} INFO - [0m08:15:23  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2025-05-01T08:15:24.658+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T08:15:24.699+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T08:15:24.700+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_run, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T081509, end_date=20250501T081524
+[2025-05-01T08:15:24.737+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T08:15:24.757+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T08:15:24.759+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

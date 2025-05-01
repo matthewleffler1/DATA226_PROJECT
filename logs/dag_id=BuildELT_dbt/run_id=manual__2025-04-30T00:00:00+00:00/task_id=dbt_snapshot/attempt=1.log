@@ -1,0 +1,634 @@
+[2025-05-01T07:36:18.373+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:36:18.379+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:36:18.384+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:36:18.384+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:36:18.389+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:36:18.393+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '116', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmp2_tnjirq']
+[2025-05-01T07:36:18.394+0000] {standard_task_runner.py:105} INFO - Job 116: Subtask dbt_snapshot
+[2025-05-01T07:36:18.394+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2043) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:36:18.395+0000] {standard_task_runner.py:72} INFO - Started process 2044 to run task
+[2025-05-01T07:36:18.420+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:36:18.450+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:36:18.451+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:36:18.460+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:36:18.460+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:36:18.464+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:36:19.477+0000] {subprocess.py:93} INFO - [0m07:36:19  Running with dbt=1.9.0-b4
+[2025-05-01T07:36:19.880+0000] {subprocess.py:93} INFO - [0m07:36:19  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:36:20.095+0000] {subprocess.py:93} INFO - [0m07:36:20  Found 6 models, 2 snapshots, 60 data tests, 2 sources, 725 macros
+[2025-05-01T07:36:20.097+0000] {subprocess.py:93} INFO - [0m07:36:20
+[2025-05-01T07:36:20.098+0000] {subprocess.py:93} INFO - [0m07:36:20  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:36:20.098+0000] {subprocess.py:93} INFO - [0m07:36:20
+[2025-05-01T07:36:24.879+0000] {subprocess.py:93} INFO - [0m07:36:24  1 of 2 START snapshot snapshots.snapshot_sj_weather ............................ [RUN]
+[2025-05-01T07:36:26.326+0000] {subprocess.py:93} INFO - [0m07:36:26  1 of 2 ERROR snapshotting snapshots.snapshot_sj_weather ........................ [[31mERROR[0m in 1.44s]
+[2025-05-01T07:36:26.328+0000] {subprocess.py:93} INFO - [0m07:36:26  2 of 2 START snapshot snapshot.snapshot_zipcode_weather ........................ [RUN]
+[2025-05-01T07:36:27.315+0000] {subprocess.py:93} INFO - [0m07:36:27  2 of 2 ERROR snapshotting snapshot.snapshot_zipcode_weather .................... [[31mERROR[0m in 0.98s]
+[2025-05-01T07:36:27.319+0000] {subprocess.py:93} INFO - [0m07:36:27
+[2025-05-01T07:36:27.319+0000] {subprocess.py:93} INFO - [0m07:36:27  Finished running 2 snapshots in 0 hours 0 minutes and 7.22 seconds (7.22s).
+[2025-05-01T07:36:27.467+0000] {subprocess.py:93} INFO - [0m07:36:27
+[2025-05-01T07:36:27.468+0000] {subprocess.py:93} INFO - [0m07:36:27  [31mCompleted with 2 errors, 0 partial successs, and 0 warnings:[0m
+[2025-05-01T07:36:27.468+0000] {subprocess.py:93} INFO - [0m07:36:27
+[2025-05-01T07:36:27.469+0000] {subprocess.py:93} INFO - [0m07:36:27    Database Error in snapshot snapshot_sj_weather (snapshots/snapshot_sj_weather.sql)
+[2025-05-01T07:36:27.469+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 109 at position 41
+[2025-05-01T07:36:27.469+0000] {subprocess.py:93} INFO -   invalid identifier 'SOURCE_DATA.LOCALTIME'
+[2025-05-01T07:36:27.470+0000] {subprocess.py:93} INFO - [0m07:36:27
+[2025-05-01T07:36:27.470+0000] {subprocess.py:93} INFO - [0m07:36:27    Database Error in snapshot snapshot_zipcode_weather (snapshots/snapshot_zipcode_weather.sql)
+[2025-05-01T07:36:27.470+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 115 at position 41
+[2025-05-01T07:36:27.470+0000] {subprocess.py:93} INFO -   invalid identifier 'SOURCE_DATA.LOCALTIME'
+[2025-05-01T07:36:27.470+0000] {subprocess.py:93} INFO - [0m07:36:27
+[2025-05-01T07:36:27.471+0000] {subprocess.py:93} INFO - [0m07:36:27  Done. PASS=0 WARN=0 ERROR=2 SKIP=0 TOTAL=2
+[2025-05-01T07:36:28.140+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-01T07:36:28.155+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:36:28.166+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:36:28.175+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:36:28.176+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:41:48.013+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:41:48.020+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:41:48.024+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:41:48.024+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:41:48.029+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:41:48.033+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '117', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpdje2brly']
+[2025-05-01T07:41:48.034+0000] {standard_task_runner.py:105} INFO - Job 117: Subtask dbt_snapshot
+[2025-05-01T07:41:48.034+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2329) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:41:48.035+0000] {standard_task_runner.py:72} INFO - Started process 2330 to run task
+[2025-05-01T07:41:48.059+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:41:48.089+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:41:48.089+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:41:48.098+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:41:48.098+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:41:48.102+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:41:49.057+0000] {subprocess.py:93} INFO - [0m07:41:49  Running with dbt=1.9.0-b4
+[2025-05-01T07:41:49.500+0000] {subprocess.py:93} INFO - [0m07:41:49  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:41:49.656+0000] {subprocess.py:93} INFO - [0m07:41:49  Encountered an error:
+[2025-05-01T07:41:49.656+0000] {subprocess.py:93} INFO - Compilation Error
+[2025-05-01T07:41:49.656+0000] {subprocess.py:93} INFO -   unexpected EOF, expected string, got "raw_sj_weather_data') }}
+[2025-05-01T07:41:49.656+0000] {subprocess.py:93} INFO - 
+[2025-05-01T07:41:49.657+0000] {subprocess.py:93} INFO -   {% endsnapshot %}"
+[2025-05-01T07:41:50.241+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-05-01T07:41:50.249+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:41:50.260+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:41:50.267+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:41:50.268+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:43:26.063+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:43:26.073+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:43:26.079+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:43:26.079+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:43:26.086+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:43:26.092+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '118', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpo4w00s80']
+[2025-05-01T07:43:26.094+0000] {standard_task_runner.py:105} INFO - Job 118: Subtask dbt_snapshot
+[2025-05-01T07:43:26.094+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2428) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:43:26.094+0000] {standard_task_runner.py:72} INFO - Started process 2437 to run task
+[2025-05-01T07:43:26.123+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:43:26.162+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:43:26.163+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:43:26.186+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:43:26.186+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:43:26.191+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:43:27.093+0000] {subprocess.py:93} INFO - [0m07:43:27  Running with dbt=1.9.0-b4
+[2025-05-01T07:43:27.547+0000] {subprocess.py:93} INFO - [0m07:43:27  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:43:27.760+0000] {subprocess.py:93} INFO - [0m07:43:27  Encountered an error:
+[2025-05-01T07:43:27.760+0000] {subprocess.py:93} INFO - keyword argument repeated: updated_at (<template>, line 14)
+[2025-05-01T07:43:27.762+0000] {subprocess.py:93} INFO - [0m07:43:27  Traceback (most recent call last):
+[2025-05-01T07:43:27.762+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 153, in wrapper
+[2025-05-01T07:43:27.762+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 103, in wrapper
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 235, in wrapper
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 264, in wrapper
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 311, in wrapper
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T07:43:27.763+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 327, in wrapper
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -     setup_manifest(ctx, write=write, write_perf_info=write_perf_info)
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 351, in setup_manifest
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -                           ^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 2011, in parse_manifest
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -     manifest = ManifestLoader.get_full_manifest(
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 310, in get_full_manifest
+[2025-05-01T07:43:27.764+0000] {subprocess.py:93} INFO -     manifest = loader.load()
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 415, in load
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -     self.parse_project(
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 717, in parse_project
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -     parser.parse_file(block)
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/snapshots.py", line 44, in parse_file
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -     self.parse_node(block)
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/base.py", line 468, in parse_node
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -     self.render_update(node, config)
+[2025-05-01T07:43:27.765+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/base.py", line 444, in render_update
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -     context = self.render_with_context(node, config)
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/base.py", line 272, in render_with_context
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -     get_rendered(parsed_node.raw_code, context, parsed_node, capture_macros=True)
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/clients/jinja.py", line 136, in get_rendered
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -     template = get_template(
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 565, in get_template
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -     return env.from_string(template_source, globals=ctx)
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/jinja2/environment.py", line 1108, in from_string
+[2025-05-01T07:43:27.766+0000] {subprocess.py:93} INFO -     return cls.from_code(self, self.compile(source), gs, None)
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -                                ^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/jinja2/environment.py", line 766, in compile
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -     return self._compile(source, filename)
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 125, in _compile
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -     return super()._compile(source, filename)  # type: ignore
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/jinja2/environment.py", line 706, in _compile
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -     return compile(source, filename, "exec")
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:43:27.767+0000] {subprocess.py:93} INFO -   File "<template>", line 14
+[2025-05-01T07:43:27.768+0000] {subprocess.py:93} INFO - SyntaxError: keyword argument repeated: updated_at
+[2025-05-01T07:43:27.768+0000] {subprocess.py:93} INFO - 
+[2025-05-01T07:43:28.397+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-05-01T07:43:28.406+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:43:28.432+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:43:28.440+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:43:28.441+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:45:42.164+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:45:42.178+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:45:42.182+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:45:42.182+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:45:42.187+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:45:42.192+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '119', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpymbw4nl5']
+[2025-05-01T07:45:42.193+0000] {standard_task_runner.py:105} INFO - Job 119: Subtask dbt_snapshot
+[2025-05-01T07:45:42.193+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2557) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:45:42.193+0000] {standard_task_runner.py:72} INFO - Started process 2558 to run task
+[2025-05-01T07:45:42.215+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:45:42.246+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:45:42.247+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:45:42.262+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:45:42.262+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:45:42.267+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:45:43.305+0000] {subprocess.py:93} INFO - [0m07:45:43  Running with dbt=1.9.0-b4
+[2025-05-01T07:45:43.743+0000] {subprocess.py:93} INFO - [0m07:45:43  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:45:43.999+0000] {subprocess.py:93} INFO - [0m07:45:43  Encountered an error:
+[2025-05-01T07:45:43.999+0000] {subprocess.py:93} INFO - keyword argument repeated: updated_at (<template>, line 14)
+[2025-05-01T07:45:44.000+0000] {subprocess.py:93} INFO - [0m07:45:44  Traceback (most recent call last):
+[2025-05-01T07:45:44.000+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 153, in wrapper
+[2025-05-01T07:45:44.000+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-05-01T07:45:44.000+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 103, in wrapper
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 235, in wrapper
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 264, in wrapper
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T07:45:44.001+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.003+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 311, in wrapper
+[2025-05-01T07:45:44.004+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T07:45:44.004+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.005+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 327, in wrapper
+[2025-05-01T07:45:44.005+0000] {subprocess.py:93} INFO -     setup_manifest(ctx, write=write, write_perf_info=write_perf_info)
+[2025-05-01T07:45:44.005+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 351, in setup_manifest
+[2025-05-01T07:45:44.005+0000] {subprocess.py:93} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2025-05-01T07:45:44.005+0000] {subprocess.py:93} INFO -                           ^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.005+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 2011, in parse_manifest
+[2025-05-01T07:45:44.006+0000] {subprocess.py:93} INFO -     manifest = ManifestLoader.get_full_manifest(
+[2025-05-01T07:45:44.006+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.006+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 310, in get_full_manifest
+[2025-05-01T07:45:44.006+0000] {subprocess.py:93} INFO -     manifest = loader.load()
+[2025-05-01T07:45:44.006+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^
+[2025-05-01T07:45:44.006+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 415, in load
+[2025-05-01T07:45:44.006+0000] {subprocess.py:93} INFO -     self.parse_project(
+[2025-05-01T07:45:44.007+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 717, in parse_project
+[2025-05-01T07:45:44.007+0000] {subprocess.py:93} INFO -     parser.parse_file(block)
+[2025-05-01T07:45:44.008+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/snapshots.py", line 44, in parse_file
+[2025-05-01T07:45:44.009+0000] {subprocess.py:93} INFO -     self.parse_node(block)
+[2025-05-01T07:45:44.010+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/base.py", line 468, in parse_node
+[2025-05-01T07:45:44.010+0000] {subprocess.py:93} INFO -     self.render_update(node, config)
+[2025-05-01T07:45:44.010+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/base.py", line 444, in render_update
+[2025-05-01T07:45:44.010+0000] {subprocess.py:93} INFO -     context = self.render_with_context(node, config)
+[2025-05-01T07:45:44.011+0000] {subprocess.py:93} INFO -               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.011+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/base.py", line 272, in render_with_context
+[2025-05-01T07:45:44.011+0000] {subprocess.py:93} INFO -     get_rendered(parsed_node.raw_code, context, parsed_node, capture_macros=True)
+[2025-05-01T07:45:44.011+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/clients/jinja.py", line 136, in get_rendered
+[2025-05-01T07:45:44.011+0000] {subprocess.py:93} INFO -     template = get_template(
+[2025-05-01T07:45:44.012+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^
+[2025-05-01T07:45:44.013+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 565, in get_template
+[2025-05-01T07:45:44.014+0000] {subprocess.py:93} INFO -     return env.from_string(template_source, globals=ctx)
+[2025-05-01T07:45:44.014+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.014+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/jinja2/environment.py", line 1108, in from_string
+[2025-05-01T07:45:44.014+0000] {subprocess.py:93} INFO -     return cls.from_code(self, self.compile(source), gs, None)
+[2025-05-01T07:45:44.014+0000] {subprocess.py:93} INFO -                                ^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.014+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/jinja2/environment.py", line 766, in compile
+[2025-05-01T07:45:44.014+0000] {subprocess.py:93} INFO -     return self._compile(source, filename)
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt_common/clients/jinja.py", line 125, in _compile
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO -     return super()._compile(source, filename)  # type: ignore
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/jinja2/environment.py", line 706, in _compile
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO -     return compile(source, filename, "exec")
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO -   File "<template>", line 14
+[2025-05-01T07:45:44.015+0000] {subprocess.py:93} INFO - SyntaxError: keyword argument repeated: updated_at
+[2025-05-01T07:45:44.016+0000] {subprocess.py:93} INFO - 
+[2025-05-01T07:45:44.586+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-05-01T07:45:44.596+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:45:44.616+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:45:44.623+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:45:44.623+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:47:30.149+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:47:30.156+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:47:30.160+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:47:30.160+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:47:30.164+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:47:30.168+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '120', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpgq44im7d']
+[2025-05-01T07:47:30.170+0000] {standard_task_runner.py:105} INFO - Job 120: Subtask dbt_snapshot
+[2025-05-01T07:47:30.170+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2666) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:47:30.171+0000] {standard_task_runner.py:72} INFO - Started process 2667 to run task
+[2025-05-01T07:47:30.193+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:47:30.232+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:47:30.233+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:47:30.241+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:47:30.242+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:47:30.246+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:47:31.196+0000] {subprocess.py:93} INFO - [0m07:47:31  Running with dbt=1.9.0-b4
+[2025-05-01T07:47:31.630+0000] {subprocess.py:93} INFO - [0m07:47:31  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:47:31.887+0000] {subprocess.py:93} INFO - [0m07:47:31  Found 6 models, 60 data tests, 2 snapshots, 2 sources, 725 macros
+[2025-05-01T07:47:31.889+0000] {subprocess.py:93} INFO - [0m07:47:31
+[2025-05-01T07:47:31.889+0000] {subprocess.py:93} INFO - [0m07:47:31  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:47:31.889+0000] {subprocess.py:93} INFO - [0m07:47:31
+[2025-05-01T07:47:37.405+0000] {subprocess.py:93} INFO - [0m07:47:37  1 of 2 START snapshot snapshots.snapshot_sj_weather ............................ [RUN]
+[2025-05-01T07:47:38.314+0000] {subprocess.py:93} INFO - [0m07:47:38  1 of 2 ERROR snapshotting snapshots.snapshot_sj_weather ........................ [[31mERROR[0m in 0.91s]
+[2025-05-01T07:47:38.316+0000] {subprocess.py:93} INFO - [0m07:47:38  2 of 2 START snapshot snapshot.snapshot_zipcode_weather ........................ [RUN]
+[2025-05-01T07:47:39.191+0000] {subprocess.py:93} INFO - [0m07:47:39  2 of 2 ERROR snapshotting snapshot.snapshot_zipcode_weather .................... [[31mERROR[0m in 0.87s]
+[2025-05-01T07:47:39.196+0000] {subprocess.py:93} INFO - [0m07:47:39
+[2025-05-01T07:47:39.196+0000] {subprocess.py:93} INFO - [0m07:47:39  Finished running 2 snapshots in 0 hours 0 minutes and 7.31 seconds (7.31s).
+[2025-05-01T07:47:39.292+0000] {subprocess.py:93} INFO - [0m07:47:39
+[2025-05-01T07:47:39.293+0000] {subprocess.py:93} INFO - [0m07:47:39  [31mCompleted with 2 errors, 0 partial successs, and 0 warnings:[0m
+[2025-05-01T07:47:39.293+0000] {subprocess.py:93} INFO - [0m07:47:39
+[2025-05-01T07:47:39.293+0000] {subprocess.py:93} INFO - [0m07:47:39    Database Error in snapshot snapshot_sj_weather (snapshots/snapshot_sj_weather.sql)
+[2025-05-01T07:47:39.293+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 109 at position 41
+[2025-05-01T07:47:39.294+0000] {subprocess.py:93} INFO -   invalid identifier 'SOURCE_DATA.LOCALTIME'
+[2025-05-01T07:47:39.294+0000] {subprocess.py:93} INFO - [0m07:47:39
+[2025-05-01T07:47:39.294+0000] {subprocess.py:93} INFO - [0m07:47:39    Database Error in snapshot snapshot_zipcode_weather (snapshots/snapshot_zipcode_weather.sql)
+[2025-05-01T07:47:39.294+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 115 at position 41
+[2025-05-01T07:47:39.294+0000] {subprocess.py:93} INFO -   invalid identifier 'SOURCE_DATA.LOCALTIME'
+[2025-05-01T07:47:39.294+0000] {subprocess.py:93} INFO - [0m07:47:39
+[2025-05-01T07:47:39.294+0000] {subprocess.py:93} INFO - [0m07:47:39  Done. PASS=0 WARN=0 ERROR=2 SKIP=0 TOTAL=2
+[2025-05-01T07:47:39.964+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-01T07:47:39.986+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:47:40.001+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:47:40.014+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:47:40.015+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:49:22.985+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:49:23.004+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:49:23.018+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:49:23.018+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:49:23.037+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:49:23.048+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '121', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmp31h2ckmf']
+[2025-05-01T07:49:23.061+0000] {standard_task_runner.py:105} INFO - Job 121: Subtask dbt_snapshot
+[2025-05-01T07:49:23.049+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2803) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:49:23.073+0000] {standard_task_runner.py:72} INFO - Started process 2813 to run task
+[2025-05-01T07:49:23.094+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:49:23.128+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:49:23.128+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:49:23.138+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:49:23.138+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:49:23.148+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:49:24.033+0000] {subprocess.py:93} INFO - [0m07:49:24  Running with dbt=1.9.0-b4
+[2025-05-01T07:49:24.440+0000] {subprocess.py:93} INFO - [0m07:49:24  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:49:24.680+0000] {subprocess.py:93} INFO - [0m07:49:24  Found 6 models, 60 data tests, 1 snapshot, 2 sources, 725 macros
+[2025-05-01T07:49:24.682+0000] {subprocess.py:93} INFO - [0m07:49:24
+[2025-05-01T07:49:24.682+0000] {subprocess.py:93} INFO - [0m07:49:24  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:49:24.682+0000] {subprocess.py:93} INFO - [0m07:49:24
+[2025-05-01T07:49:27.463+0000] {subprocess.py:93} INFO - [0m07:49:27  1 of 1 START snapshot snapshots.snapshot_sj_weather ............................ [RUN]
+[2025-05-01T07:49:29.166+0000] {subprocess.py:93} INFO - [0m07:49:29  1 of 1 ERROR snapshotting snapshots.snapshot_sj_weather ........................ [[31mERROR[0m in 1.70s]
+[2025-05-01T07:49:29.172+0000] {subprocess.py:93} INFO - [0m07:49:29
+[2025-05-01T07:49:29.173+0000] {subprocess.py:93} INFO - [0m07:49:29  Finished running 1 snapshot in 0 hours 0 minutes and 4.49 seconds (4.49s).
+[2025-05-01T07:49:29.217+0000] {subprocess.py:93} INFO - [0m07:49:29
+[2025-05-01T07:49:29.218+0000] {subprocess.py:93} INFO - [0m07:49:29  [31mCompleted with 1 error, 0 partial successs, and 0 warnings:[0m
+[2025-05-01T07:49:29.218+0000] {subprocess.py:93} INFO - [0m07:49:29
+[2025-05-01T07:49:29.219+0000] {subprocess.py:93} INFO - [0m07:49:29    Database Error in snapshot snapshot_sj_weather (snapshots/snapshot_sj_weather.sql)
+[2025-05-01T07:49:29.219+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 109 at position 41
+[2025-05-01T07:49:29.219+0000] {subprocess.py:93} INFO -   invalid identifier 'SOURCE_DATA.LOCALTIME'
+[2025-05-01T07:49:29.219+0000] {subprocess.py:93} INFO - [0m07:49:29
+[2025-05-01T07:49:29.219+0000] {subprocess.py:93} INFO - [0m07:49:29  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2025-05-01T07:49:29.896+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-01T07:49:29.907+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:49:29.919+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:49:29.927+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:49:29.927+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:52:33.680+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:52:33.687+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:52:33.691+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:52:33.691+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:52:33.699+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:52:33.705+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2977) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:52:33.705+0000] {standard_task_runner.py:72} INFO - Started process 2978 to run task
+[2025-05-01T07:52:33.704+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '122', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpur_uzhr3']
+[2025-05-01T07:52:33.706+0000] {standard_task_runner.py:105} INFO - Job 122: Subtask dbt_snapshot
+[2025-05-01T07:52:33.725+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:52:33.757+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:52:33.758+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:52:33.766+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:52:33.767+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:52:33.772+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:52:34.718+0000] {subprocess.py:93} INFO - [0m07:52:34  Running with dbt=1.9.0-b4
+[2025-05-01T07:52:35.157+0000] {subprocess.py:93} INFO - [0m07:52:35  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:52:35.486+0000] {subprocess.py:93} INFO - [0m07:52:35  Found 6 models, 60 data tests, 1 snapshot, 2 sources, 725 macros
+[2025-05-01T07:52:35.488+0000] {subprocess.py:93} INFO - [0m07:52:35
+[2025-05-01T07:52:35.488+0000] {subprocess.py:93} INFO - [0m07:52:35  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:52:35.488+0000] {subprocess.py:93} INFO - [0m07:52:35
+[2025-05-01T07:52:38.450+0000] {subprocess.py:93} INFO - [0m07:52:38  1 of 1 START snapshot snapshots.snapshot_sj_weather ............................ [RUN]
+[2025-05-01T07:52:39.652+0000] {subprocess.py:93} INFO - [0m07:52:39  1 of 1 ERROR snapshotting snapshots.snapshot_sj_weather ........................ [[31mERROR[0m in 1.20s]
+[2025-05-01T07:52:39.656+0000] {subprocess.py:93} INFO - [0m07:52:39
+[2025-05-01T07:52:39.656+0000] {subprocess.py:93} INFO - [0m07:52:39  Finished running 1 snapshot in 0 hours 0 minutes and 4.17 seconds (4.17s).
+[2025-05-01T07:52:39.697+0000] {subprocess.py:93} INFO - [0m07:52:39
+[2025-05-01T07:52:39.697+0000] {subprocess.py:93} INFO - [0m07:52:39  [31mCompleted with 1 error, 0 partial successs, and 0 warnings:[0m
+[2025-05-01T07:52:39.697+0000] {subprocess.py:93} INFO - [0m07:52:39
+[2025-05-01T07:52:39.698+0000] {subprocess.py:93} INFO - [0m07:52:39    Database Error in snapshot snapshot_sj_weather (snapshots/snapshot_sj_weather.sql)
+[2025-05-01T07:52:39.698+0000] {subprocess.py:93} INFO -   001010 (42846): SQL compilation error:
+[2025-05-01T07:52:39.698+0000] {subprocess.py:93} INFO -   incompatible types: [TIME(9)] and [TIMESTAMP_NTZ(9)]
+[2025-05-01T07:52:39.698+0000] {subprocess.py:93} INFO - [0m07:52:39
+[2025-05-01T07:52:39.698+0000] {subprocess.py:93} INFO - [0m07:52:39  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2025-05-01T07:52:40.805+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-01T07:52:40.814+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-05-01T07:52:40.817+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=BuildELT_dbt, task_id=dbt_snapshot, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T075233, end_date=20250501T075240
+[2025-05-01T07:52:40.824+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:52:40.824+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 122 for task dbt_snapshot (Bash command failed. The command returned a non-zero exit code 1.; 2978)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-05-01T07:52:40.830+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-05-01T07:52:40.837+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:52:40.837+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:55:05.089+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:55:05.098+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:55:05.102+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:55:05.102+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:55:05.108+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:55:05.115+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=3220) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:55:05.116+0000] {standard_task_runner.py:72} INFO - Started process 3222 to run task
+[2025-05-01T07:55:05.113+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '125', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpc7kamti3']
+[2025-05-01T07:55:05.117+0000] {standard_task_runner.py:105} INFO - Job 125: Subtask dbt_snapshot
+[2025-05-01T07:55:05.141+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:55:05.174+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:55:05.174+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:55:05.184+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:55:05.184+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:55:05.189+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:55:06.080+0000] {subprocess.py:93} INFO - [0m07:55:06  Running with dbt=1.9.0-b4
+[2025-05-01T07:55:06.495+0000] {subprocess.py:93} INFO - [0m07:55:06  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:55:06.715+0000] {subprocess.py:93} INFO - [0m07:55:06  Found 6 models, 60 data tests, 2 snapshots, 2 sources, 725 macros
+[2025-05-01T07:55:06.716+0000] {subprocess.py:93} INFO - [0m07:55:06
+[2025-05-01T07:55:06.717+0000] {subprocess.py:93} INFO - [0m07:55:06  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:55:06.717+0000] {subprocess.py:93} INFO - [0m07:55:06
+[2025-05-01T07:55:11.478+0000] {subprocess.py:93} INFO - [0m07:55:11  1 of 2 START snapshot snapshots.snapshot_sj_weather ............................ [RUN]
+[2025-05-01T07:55:12.913+0000] {subprocess.py:93} INFO - [0m07:55:12  1 of 2 ERROR snapshotting snapshots.snapshot_sj_weather ........................ [[31mERROR[0m in 1.43s]
+[2025-05-01T07:55:12.916+0000] {subprocess.py:93} INFO - [0m07:55:12  2 of 2 START snapshot snapshot.snapshot_zipcode_weather ........................ [RUN]
+[2025-05-01T07:55:13.762+0000] {subprocess.py:93} INFO - [0m07:55:13  2 of 2 ERROR snapshotting snapshot.snapshot_zipcode_weather .................... [[31mERROR[0m in 0.84s]
+[2025-05-01T07:55:13.764+0000] {subprocess.py:93} INFO - [0m07:55:13
+[2025-05-01T07:55:13.764+0000] {subprocess.py:93} INFO - [0m07:55:13  Finished running 2 snapshots in 0 hours 0 minutes and 7.05 seconds (7.05s).
+[2025-05-01T07:55:13.851+0000] {subprocess.py:93} INFO - [0m07:55:13
+[2025-05-01T07:55:13.851+0000] {subprocess.py:93} INFO - [0m07:55:13  [31mCompleted with 2 errors, 0 partial successs, and 0 warnings:[0m
+[2025-05-01T07:55:13.852+0000] {subprocess.py:93} INFO - [0m07:55:13
+[2025-05-01T07:55:13.852+0000] {subprocess.py:93} INFO - [0m07:55:13    Database Error in snapshot snapshot_sj_weather (snapshots/snapshot_sj_weather.sql)
+[2025-05-01T07:55:13.852+0000] {subprocess.py:93} INFO -   001010 (42846): SQL compilation error:
+[2025-05-01T07:55:13.852+0000] {subprocess.py:93} INFO -   incompatible types: [TIME(9)] and [TIMESTAMP_NTZ(9)]
+[2025-05-01T07:55:13.852+0000] {subprocess.py:93} INFO - [0m07:55:13
+[2025-05-01T07:55:13.853+0000] {subprocess.py:93} INFO - [0m07:55:13    Database Error in snapshot snapshot_zipcode_weather (snapshots/snapshot_zipcode_weather.sql)
+[2025-05-01T07:55:13.853+0000] {subprocess.py:93} INFO -   001010 (42846): SQL compilation error:
+[2025-05-01T07:55:13.853+0000] {subprocess.py:93} INFO -   incompatible types: [TIME(9)] and [TIMESTAMP_NTZ(9)]
+[2025-05-01T07:55:13.853+0000] {subprocess.py:93} INFO - [0m07:55:13
+[2025-05-01T07:55:13.854+0000] {subprocess.py:93} INFO - [0m07:55:13  Done. PASS=0 WARN=0 ERROR=2 SKIP=0 TOTAL=2
+[2025-05-01T07:55:14.431+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-01T07:55:14.446+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:55:14.452+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:55:14.463+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:55:14.464+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T07:59:16.402+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T07:59:16.410+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:59:16.414+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T07:59:16.414+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T07:59:16.419+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T07:59:16.427+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=3503) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T07:59:16.423+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '128', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpcu_kq7h_']
+[2025-05-01T07:59:16.428+0000] {standard_task_runner.py:105} INFO - Job 128: Subtask dbt_snapshot
+[2025-05-01T07:59:16.428+0000] {standard_task_runner.py:72} INFO - Started process 3504 to run task
+[2025-05-01T07:59:16.454+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T07:59:16.488+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T07:59:16.488+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T07:59:16.501+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T07:59:16.502+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T07:59:16.508+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T07:59:17.472+0000] {subprocess.py:93} INFO - [0m07:59:17  Running with dbt=1.9.0-b4
+[2025-05-01T07:59:17.912+0000] {subprocess.py:93} INFO - [0m07:59:17  Registered adapter: snowflake=1.8.0
+[2025-05-01T07:59:18.168+0000] {subprocess.py:93} INFO - [0m07:59:18  Found 6 models, 60 data tests, 2 snapshots, 2 sources, 725 macros
+[2025-05-01T07:59:18.169+0000] {subprocess.py:93} INFO - [0m07:59:18
+[2025-05-01T07:59:18.170+0000] {subprocess.py:93} INFO - [0m07:59:18  Concurrency: 1 threads (target='dev')
+[2025-05-01T07:59:18.170+0000] {subprocess.py:93} INFO - [0m07:59:18
+[2025-05-01T07:59:20.509+0000] {subprocess.py:93} INFO - [0m07:59:20  1 of 2 START snapshot snapshots.snapshot_sj_weather ............................ [RUN]
+[2025-05-01T07:59:22.106+0000] {subprocess.py:93} INFO - [0m07:59:22  1 of 2 ERROR snapshotting snapshots.snapshot_sj_weather ........................ [[31mERROR[0m in 1.59s]
+[2025-05-01T07:59:22.110+0000] {subprocess.py:93} INFO - [0m07:59:22  2 of 2 START snapshot snapshots.snapshot_zipcode_weather ....................... [RUN]
+[2025-05-01T07:59:24.437+0000] {subprocess.py:93} INFO - [0m07:59:24  2 of 2 OK snapshotted snapshots.snapshot_zipcode_weather ....................... [[32mSUCCESS 1[0m in 2.33s]
+[2025-05-01T07:59:24.439+0000] {subprocess.py:93} INFO - [0m07:59:24
+[2025-05-01T07:59:24.439+0000] {subprocess.py:93} INFO - [0m07:59:24  Finished running 2 snapshots in 0 hours 0 minutes and 6.27 seconds (6.27s).
+[2025-05-01T07:59:24.523+0000] {subprocess.py:93} INFO - [0m07:59:24
+[2025-05-01T07:59:24.524+0000] {subprocess.py:93} INFO - [0m07:59:24  [31mCompleted with 1 error, 0 partial successs, and 0 warnings:[0m
+[2025-05-01T07:59:24.524+0000] {subprocess.py:93} INFO - [0m07:59:24
+[2025-05-01T07:59:24.525+0000] {subprocess.py:93} INFO - [0m07:59:24    Database Error in snapshot snapshot_sj_weather (snapshots/snapshot_sj_weather.sql)
+[2025-05-01T07:59:24.525+0000] {subprocess.py:93} INFO -   001010 (42846): SQL compilation error:
+[2025-05-01T07:59:24.525+0000] {subprocess.py:93} INFO -   incompatible types: [TIME(9)] and [TIMESTAMP_NTZ(9)]
+[2025-05-01T07:59:24.525+0000] {subprocess.py:93} INFO - [0m07:59:24
+[2025-05-01T07:59:24.525+0000] {subprocess.py:93} INFO - [0m07:59:24  Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[2025-05-01T07:59:25.162+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-01T07:59:25.179+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T07:59:25.216+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T07:59:25.224+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T07:59:25.224+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T08:11:14.376+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T08:11:14.384+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T08:11:14.389+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T08:11:14.389+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T08:11:14.397+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T08:11:14.402+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '132', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmp2p15mu4c']
+[2025-05-01T08:11:14.405+0000] {standard_task_runner.py:105} INFO - Job 132: Subtask dbt_snapshot
+[2025-05-01T08:11:14.404+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=4065) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T08:11:14.408+0000] {standard_task_runner.py:72} INFO - Started process 4066 to run task
+[2025-05-01T08:11:14.434+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T08:11:14.484+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T08:11:14.484+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T08:11:14.493+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T08:11:14.494+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T08:11:14.497+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T08:11:15.539+0000] {subprocess.py:93} INFO - [0m08:11:15  Running with dbt=1.9.0-b4
+[2025-05-01T08:11:16.045+0000] {subprocess.py:93} INFO - [0m08:11:16  Registered adapter: snowflake=1.8.0
+[2025-05-01T08:11:16.276+0000] {subprocess.py:93} INFO - [0m08:11:16  Encountered an error:
+[2025-05-01T08:11:16.276+0000] {subprocess.py:93} INFO - Invalid value for 'check_cols': localtime. Expected 'all' or a list of strings.
+[2025-05-01T08:11:16.277+0000] {subprocess.py:93} INFO - [0m08:11:16  Traceback (most recent call last):
+[2025-05-01T08:11:16.277+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 153, in wrapper
+[2025-05-01T08:11:16.277+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-05-01T08:11:16.277+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T08:11:16.277+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 103, in wrapper
+[2025-05-01T08:11:16.277+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T08:11:16.277+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 235, in wrapper
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 264, in wrapper
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 311, in wrapper
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 327, in wrapper
+[2025-05-01T08:11:16.278+0000] {subprocess.py:93} INFO -     setup_manifest(ctx, write=write, write_perf_info=write_perf_info)
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 351, in setup_manifest
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -                           ^^^^^^^^^^^^^^^
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 2011, in parse_manifest
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -     manifest = ManifestLoader.get_full_manifest(
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 310, in get_full_manifest
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -     manifest = loader.load()
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 474, in load
+[2025-05-01T08:11:16.279+0000] {subprocess.py:93} INFO -     self.check_valid_snapshot_config()
+[2025-05-01T08:11:16.280+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 1390, in check_valid_snapshot_config
+[2025-05-01T08:11:16.280+0000] {subprocess.py:93} INFO -     node.config.final_validate()
+[2025-05-01T08:11:16.280+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/artifacts/resources/v1/snapshot.py", line 54, in final_validate
+[2025-05-01T08:11:16.280+0000] {subprocess.py:93} INFO -     raise ValidationError(
+[2025-05-01T08:11:16.280+0000] {subprocess.py:93} INFO - dbt_common.dataclass_schema.ValidationError: Invalid value for 'check_cols': localtime. Expected 'all' or a list of strings.
+[2025-05-01T08:11:16.280+0000] {subprocess.py:93} INFO - 
+[2025-05-01T08:11:16.878+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-05-01T08:11:16.887+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T08:11:16.919+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T08:11:16.925+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T08:11:16.926+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T08:13:55.737+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T08:13:55.744+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T08:13:55.748+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T08:13:55.748+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T08:13:55.754+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T08:13:55.760+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=4217) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T08:13:55.758+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '133', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpaee63tf9']
+[2025-05-01T08:13:55.761+0000] {standard_task_runner.py:105} INFO - Job 133: Subtask dbt_snapshot
+[2025-05-01T08:13:55.761+0000] {standard_task_runner.py:72} INFO - Started process 4218 to run task
+[2025-05-01T08:13:55.786+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T08:13:55.815+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T08:13:55.816+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T08:13:55.826+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T08:13:55.827+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T08:13:55.831+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T08:13:56.912+0000] {subprocess.py:93} INFO - [0m08:13:56  Running with dbt=1.9.0-b4
+[2025-05-01T08:13:57.394+0000] {subprocess.py:93} INFO - [0m08:13:57  Registered adapter: snowflake=1.8.0
+[2025-05-01T08:13:57.617+0000] {subprocess.py:93} INFO - [0m08:13:57  Encountered an error:
+[2025-05-01T08:13:57.617+0000] {subprocess.py:93} INFO - Compilation Error
+[2025-05-01T08:13:57.618+0000] {subprocess.py:93} INFO -   unexpected EOF, expected string, got "raw_sj_weather_data') }}
+[2025-05-01T08:13:57.618+0000] {subprocess.py:93} INFO -   {% endsnapshot %}"
+[2025-05-01T08:13:58.358+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-05-01T08:13:58.380+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T08:13:58.429+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T08:13:58.448+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T08:13:58.449+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-01T08:14:13.188+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-01T08:14:13.197+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T08:14:13.201+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [queued]>
+[2025-05-01T08:14:13.201+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-05-01T08:14:13.205+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-30 00:00:00+00:00
+[2025-05-01T08:14:13.209+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-30T00:00:00+00:00', '--job-id', '134', '--raw', '--subdir', 'DAGS_FOLDER/elt_with_dbt.py', '--cfg-path', '/tmp/tmpiyn5172k']
+[2025-05-01T08:14:13.211+0000] {standard_task_runner.py:105} INFO - Job 134: Subtask dbt_snapshot
+[2025-05-01T08:14:13.211+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=4263) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-01T08:14:13.211+0000] {standard_task_runner.py:72} INFO - Started process 4264 to run task
+[2025-05-01T08:14:13.232+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-30T00:00:00+00:00 [running]> on host 50fb0a9bb8ff
+[2025-05-01T08:14:13.271+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T00:00:00+00:00'
+[2025-05-01T08:14:13.272+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-05-01T08:14:13.285+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-01T08:14:13.286+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/project_dbt --project-dir /opt/***/project_dbt']
+[2025-05-01T08:14:13.292+0000] {subprocess.py:86} INFO - Output:
+[2025-05-01T08:14:14.288+0000] {subprocess.py:93} INFO - [0m08:14:14  Running with dbt=1.9.0-b4
+[2025-05-01T08:14:14.755+0000] {subprocess.py:93} INFO - [0m08:14:14  Registered adapter: snowflake=1.8.0
+[2025-05-01T08:14:14.997+0000] {subprocess.py:93} INFO - [0m08:14:14  Found 6 models, 60 data tests, 2 snapshots, 2 sources, 725 macros
+[2025-05-01T08:14:14.998+0000] {subprocess.py:93} INFO - [0m08:14:14
+[2025-05-01T08:14:14.998+0000] {subprocess.py:93} INFO - [0m08:14:14  Concurrency: 1 threads (target='dev')
+[2025-05-01T08:14:14.999+0000] {subprocess.py:93} INFO - [0m08:14:14
+[2025-05-01T08:14:19.779+0000] {subprocess.py:93} INFO - [0m08:14:19  1 of 2 START snapshot "snapshots".snapshot_sj_weather .......................... [RUN]
+[2025-05-01T08:14:23.387+0000] {subprocess.py:93} INFO - [0m08:14:23  1 of 2 OK snapshotted "snapshots".snapshot_sj_weather .......................... [[32mSUCCESS 1[0m in 3.60s]
+[2025-05-01T08:14:23.388+0000] {subprocess.py:93} INFO - [0m08:14:23  2 of 2 START snapshot snapshots.snapshot_zipcode_weather ....................... [RUN]
+[2025-05-01T08:14:28.990+0000] {subprocess.py:93} INFO - [0m08:14:28  2 of 2 OK snapshotted snapshots.snapshot_zipcode_weather ....................... [[32mSUCCESS 17[0m in 5.60s]
+[2025-05-01T08:14:28.997+0000] {subprocess.py:93} INFO - [0m08:14:28
+[2025-05-01T08:14:28.998+0000] {subprocess.py:93} INFO - [0m08:14:28  Finished running 2 snapshots in 0 hours 0 minutes and 14.00 seconds (14.00s).
+[2025-05-01T08:14:29.048+0000] {subprocess.py:93} INFO - [0m08:14:29
+[2025-05-01T08:14:29.049+0000] {subprocess.py:93} INFO - [0m08:14:29  [32mCompleted successfully[0m
+[2025-05-01T08:14:29.049+0000] {subprocess.py:93} INFO - [0m08:14:29
+[2025-05-01T08:14:29.049+0000] {subprocess.py:93} INFO - [0m08:14:29  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[2025-05-01T08:14:29.652+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-01T08:14:29.675+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-05-01T08:14:29.676+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_snapshot, run_id=manual__2025-04-30T00:00:00+00:00, execution_date=20250430T000000, start_date=20250501T081413, end_date=20250501T081429
+[2025-05-01T08:14:29.710+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-01T08:14:29.718+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-01T08:14:29.719+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
