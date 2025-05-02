@@ -1,0 +1,80 @@
+[2025-05-01T08:35:01.373+0000] {processor.py:186} INFO - Started process (PID=5505) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:01.374+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:35:01.376+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:01.376+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:01.389+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:01.389+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:35:01.393+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:01.449+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:01.449+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:35:01.458+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:01.458+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 07:30:00+00:00, run_after=2025-05-01 08:30:00+00:00
+[2025-05-01T08:35:01.464+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.097 seconds
+[2025-05-01T08:35:31.918+0000] {processor.py:186} INFO - Started process (PID=5526) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:31.920+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:35:31.922+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:31.921+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:31.937+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:31.936+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:35:31.943+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:31.953+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:31.952+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:35:31.963+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:31.963+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 07:30:00+00:00, run_after=2025-05-01 08:30:00+00:00
+[2025-05-01T08:35:31.968+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.056 seconds
+[2025-05-01T08:35:37.012+0000] {processor.py:186} INFO - Started process (PID=5531) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:37.013+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:35:37.015+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:37.015+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:37.032+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:37.032+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:35:37.041+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:35:37.051+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:37.051+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:35:37.063+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:35:37.063+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 07:30:00+00:00, run_after=2025-05-01 08:30:00+00:00
+[2025-05-01T08:35:37.070+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.067 seconds
+[2025-05-01T08:36:07.495+0000] {processor.py:186} INFO - Started process (PID=5566) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:36:07.496+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:36:07.497+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:36:07.497+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:36:07.515+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:36:07.515+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:36:07.527+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:36:07.542+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:36:07.542+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:36:07.580+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:36:07.580+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 08:30:00+00:00, run_after=2025-05-01 09:30:00+00:00
+[2025-05-01T08:36:07.606+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.116 seconds
+[2025-05-01T08:36:38.045+0000] {processor.py:186} INFO - Started process (PID=5594) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:36:38.047+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:36:38.050+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:36:38.049+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:36:38.073+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:36:38.072+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:36:38.082+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:36:38.095+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:36:38.095+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:36:38.107+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:36:38.107+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 08:30:00+00:00, run_after=2025-05-01 09:30:00+00:00
+[2025-05-01T08:36:38.115+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.080 seconds
+[2025-05-01T08:37:08.520+0000] {processor.py:186} INFO - Started process (PID=5615) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:37:08.523+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:37:08.526+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:37:08.525+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:37:08.544+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:37:08.544+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:37:08.564+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:37:08.576+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:37:08.576+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:37:08.596+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:37:08.596+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 08:30:00+00:00, run_after=2025-05-01 09:30:00+00:00
+[2025-05-01T08:37:08.603+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.099 seconds
+[2025-05-01T08:37:38.933+0000] {processor.py:186} INFO - Started process (PID=5636) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:37:38.934+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:37:38.936+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:37:38.936+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:37:38.955+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:37:38.955+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:37:38.963+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:37:38.973+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:37:38.973+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:37:38.991+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:37:38.991+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 08:30:00+00:00, run_after=2025-05-01 09:30:00+00:00
+[2025-05-01T08:37:38.998+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.079 seconds
+[2025-05-01T08:38:09.438+0000] {processor.py:186} INFO - Started process (PID=5657) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:38:09.440+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:38:09.442+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:38:09.442+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:38:09.459+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:38:09.459+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:38:09.465+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:38:09.484+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:38:09.484+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:38:09.496+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:38:09.496+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 08:30:00+00:00, run_after=2025-05-01 09:30:00+00:00
+[2025-05-01T08:38:09.502+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.073 seconds
+[2025-05-01T08:38:40.119+0000] {processor.py:186} INFO - Started process (PID=5678) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:38:40.122+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:38:40.125+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:38:40.124+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:38:40.142+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:38:40.141+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:38:40.148+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:38:40.158+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:38:40.157+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:38:40.169+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:38:40.169+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 08:30:00+00:00, run_after=2025-05-01 09:30:00+00:00
+[2025-05-01T08:38:40.175+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.062 seconds
+[2025-05-01T08:39:10.666+0000] {processor.py:186} INFO - Started process (PID=5699) to work on /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:39:10.669+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather_elt.py for tasks to queue
+[2025-05-01T08:39:10.672+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:39:10.670+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:39:10.706+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:39:10.706+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-05-01T08:39:10.723+0000] {processor.py:925} INFO - DAG(s) 'build_weather_elt' retrieved from /opt/airflow/dags/weather_elt.py
+[2025-05-01T08:39:10.751+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:39:10.751+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-05-01T08:39:10.772+0000] {logging_mixin.py:190} INFO - [2025-05-01T08:39:10.772+0000] {dag.py:4156} INFO - Setting next_dagrun for build_weather_elt to 2025-05-01 08:30:00+00:00, run_after=2025-05-01 09:30:00+00:00
+[2025-05-01T08:39:10.781+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather_elt.py took 0.133 seconds

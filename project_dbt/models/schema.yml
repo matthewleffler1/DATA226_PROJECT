@@ -1,0 +1,193 @@
+version: 2
+
+models:
+  - name: raw_sj_weather_data
+    description: "Raw weather data from San Jose over the past 14 days"
+    columns:
+      - name: '"localtime"'
+        description: "Timestamp of each weather reading"
+        tests:
+          - not_null
+          - unique
+      - name: TEMP_F
+        description: "Temperature reading of each weather reading in Fahrenheit"
+        tests:
+          - not_null
+      - name: WIND_MPH
+        description: "Temperature reading of each weather reading in Fahrenheit"
+        tests:
+          - not_null   
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: PRECIP_IN
+        description: "Temperature reading of each weather reading in Fahrenheit"
+        tests:
+          - not_null   
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: HUMIDITY
+        description: "Temperature reading of each weather reading in Fahrenheit"
+        tests:
+          - not_null   
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: CLOUDINESS
+        tests:
+          - not_null    
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 100
+      - name: UV
+        tests:
+          - not_null    
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+  - name: raw_zipcode_weather_data
+    description: "Raw weather data based on zipcodes (chosen to span California)"
+    columns:
+      - name: LOCATION_NAME
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+      - name: LAT
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+      - name: LON
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+      - name: localtime
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+      - name: TEMP_F
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+      - name: WIND_MPH
+        description: "Temperature reading of each weather reading in Fahrenheit"
+        tests:
+          - not_null   
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: WIND_DIR
+        description: "Temperature reading of each weather reading in Fahrenheit"
+        tests:
+          - not_null
+      - name: PRECIP_IN
+        description: "Temperature reading of each weather reading in Fahrenheit"
+        tests:
+          - not_null   
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: HUMIDITY
+        description: "Temperature reading of each weather reading in Fahrenheit"
+        tests:
+          - not_null   
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: CLOUDINESS
+        tests:
+          - not_null    
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 100
+      - name: CONDITION
+        tests:
+          - not_null
+      - name: UV
+        tests:
+          - not_null    
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: GUST_KPH
+        tests:
+          - not_null    
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+  - name: average_sj_weather
+    description: "Tracks average weather statistics day-by-day"
+    columns:
+      - name: AVERAGE_TEMP
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+      - name: AVERAGE_WIND_MPH
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: AVERAGE_PRECIP_IN
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: AVERAGE_HUMIDITY
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: AVERAGE_UV
+        description: "Name of city where zipcode originates from"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+  - name: filtered_zipcode_data
+    columns:
+      - name: REGION
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Southern California', 'Central California', 'Northern California']
+  - name: average_zipcode_data
+    description: "Raw weather data from San Jose over the past 14 days"
+    columns:
+      - name: REGION
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Southern California', 'Central California', 'Northern California']
+      - name: AVERAGE_TEMPERATURE
+        tests:
+          - not_null
+      - name: AVERAGE_WIND_SPEED_MPH
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: TOTAL_RAINFALL_INCHES
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: AVERAGE_HUMIDITY
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: AVERAGE_CLOUDINESS
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: AVERAGE_UV
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: AVERAGE_GUST_SPEED_KPH
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: EARLIEST_RECORD_DATE
+        tests:
+          - not_null
+      - name: LATEST_RECORD_DATE
+        tests:
+          - not_null
